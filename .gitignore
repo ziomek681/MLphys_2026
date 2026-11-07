@@ -2,4 +2,6 @@
 *.pptx
 *idea
 *vscode
+data/
+*pycache*
 
