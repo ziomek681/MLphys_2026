@@ -1,2 +1,5 @@
 *.ipynb_checkpoints*
 *.pptx
+*idea
+*vscode
+*data*
