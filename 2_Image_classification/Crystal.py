@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -13,7 +16,7 @@ model_args = {}
 # random seed
 model_args['seed'] = 123
 # we will use batch size of 128 in Stochastic Gradient Descent (SGD) optimization of the network
-model_args['batch_size'] = 128
+model_args['batch_size'] = 512
 # learning rate is how fast it will descend
 model_args['lr'] = 1e-3
 # SGD momentum (default: .5) momentum is a moving average of gradients (it helps to keep direction)
@@ -21,7 +24,7 @@ model_args['momentum'] = .5
 # the number of epochs is the number of times you go through the full dataset
 model_args['epochs'] = 50
 # logging frequency
-model_args['log_interval'] = 10
+model_args['log_interval'] = 100
 
 
 train_loader, val_loader, test_loader= utils.parse_dataset_classification('./wallpaper_dataset/data',
@@ -162,7 +165,7 @@ def test(model, device, test_loader, message):
         100. * correct / len(test_loader.dataset)))
     return test_loss.cpu()
 
-def plot_loss(train_loss, validation_loss, title):
+def plot_loss(train_loss, validation_loss, title, savepath):
     plt.grid(True)
     plt.xlabel("subsequent epochs")
     plt.ylabel('average loss')
@@ -171,12 +174,13 @@ def plot_loss(train_loss, validation_loss, title):
     plt.legend()
     plt.title(title)
     plt.show()
+    plt.savefig(Path(savepath) / ("TruePredCorelation_" + parameter), dpi=150)
 
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[10,5,5], CNN_series=[2,2,2], pooling=True).to(device)
+model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[20,10,5,5], CNN_series=[3,3,3,3], pooling=True).to(device)
 
 print(model)
 
@@ -190,4 +194,4 @@ for epoch_number in range(1, model_args['epochs'] + 1):
     val_loss.append(test(model, device, val_loader, 'Validation set'))
 
 test(model, device, test_loader, 'Test set')
-plot_loss(train_loss, val_loss, 'CNN model')
+plot_loss(train_loss, val_loss, 'CNN model', "ResultsCrystal")
