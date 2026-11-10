@@ -169,13 +169,32 @@ wallpaper_reduced = {1: 1,
 
 class CustomDataset(Dataset):
     """__init__ and __len__ functions are the same as in TorchvisionDataset"""
-    def __init__(self, data_dir, file_paths, labels, normalize=False, downsample=True):
+    def __init__(self, data_dir, file_paths, labels, normalize=False, downsample=True, preloaddata=False):
         self.data_dir = data_dir
         self.file_paths = file_paths
         self.labels = labels
         self.normalize = normalize
         self.transform = Normalize(.5,.5)
         self.downsample = downsample
+
+        self.preloaddata = preloaddata
+        self.images = []
+        print(len(file_paths))
+        if self.preloaddata == True:
+            for i in range(len(file_paths)):
+                image = cv2.imread(os.path.join(self.data_dir, self.file_paths[i]), cv2.IMREAD_GRAYSCALE)
+                if image.dtype == 'uint8': image = image.astype('float32') / 255.  # return to float
+                image = 1. - image
+                if self.downsample:
+                    h, w = image.shape
+                    new_h, new_w = h // 2, w // 2
+
+                    start_y = (h - new_h) // 2
+                    start_x = (w - new_w) // 2
+
+                    image = image[start_y:start_y + new_h, start_x:start_x + new_w]
+
+                self.images.append(image)
         
     def __len__(self):
         return len(self.file_paths)
@@ -183,31 +202,35 @@ class CustomDataset(Dataset):
     def __getitem__(self, idx):
         label = self.labels[idx]
         file_path = self.file_paths[idx]
-        # Read an image with OpenCV
-        image = cv2.imread(os.path.join(self.data_dir, file_path), cv2.IMREAD_GRAYSCALE)
-        if image.dtype == 'uint8': image = image.astype('float32')/255.  # return to float
-        image = 1. - image
 
-        # naive downsampling
-        #if self.downsample:
-        #    image = image[::2,::2]
+        if self.preloaddata == False:
+            # Read an image with OpenCV
+            image = cv2.imread(os.path.join(self.data_dir, file_path), cv2.IMREAD_GRAYSCALE)
+            if image.dtype == 'uint8': image = image.astype('float32')/255.  # return to float
+            image = 1. - image
 
-        # Center crop
-        if self.downsample:
-            h, w = image.shape
-            new_h, new_w = h // 2, w // 2
+            # naive downsampling
+            #if self.downsample:
+            #    image = image[::2,::2]
 
-            start_y = (h - new_h) // 2
-            start_x = (w - new_w) // 2
+            # Center crop
+            if self.downsample:
+                h, w = image.shape
+                new_h, new_w = h // 2, w // 2
 
-            image = image[start_y:start_y + new_h, start_x:start_x + new_w]
+                start_y = (h - new_h) // 2
+                start_x = (w - new_w) // 2
+
+                image = image[start_y:start_y + new_h, start_x:start_x + new_w]
+        else:
+            image = self.images[idx]
 
         if self.normalize:
             return self.transform(torch.tensor(image[None,...])), torch.tensor(label).type((torch.float32))
         else:
             return torch.tensor(image[None,...]), torch.tensor(label).type((torch.float32))
 
-def parse_dataset_classification(dataset_directory, labels='labels.json', label_dict=sorted_groups, splitratio=[.7,.2,.1], batchsize=128, normalize=False, downsample=True):
+def parse_dataset_classification(dataset_directory, labels='labels.json', label_dict=sorted_groups, splitratio=[.7,.2,.1], batchsize=128, normalize=False, downsample=True, preloaddata=False):
     label_file = open(os.path.join(dataset_directory, labels))
     label_data = json.load(label_file)
     datafiles=[]
@@ -218,7 +241,7 @@ def parse_dataset_classification(dataset_directory, labels='labels.json', label_
     #le = preprocessing.LabelEncoder()
     #datalabels = le.fit_transform(datalabels)
     datalabels = [label_dict[dl] for dl in datalabels]  # translate respective groups into numbers
-    dataset = CustomDataset(dataset_directory, datafiles, datalabels, normalize=normalize, downsample=downsample)
+    dataset = CustomDataset(dataset_directory, datafiles, datalabels, normalize=normalize, downsample=downsample, preloaddata=preloaddata)
     trainsize = int(len(dataset) * splitratio[0])
     valsize = int(len(dataset) * splitratio[1])
     testsize = int(len(dataset) * splitratio[2])
