@@ -2,15 +2,22 @@
 
 
 import torch
+import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from wallpaper_dataset import utils
 import matplotlib.pyplot as plt
+import cv2
+from pathlib import Path
 
-import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 14})
+
+
+print(np.__version__, flush=True)
+print(cv2.__version__, flush=True)
+
 
 model_args = {}
 # random seed
@@ -24,19 +31,19 @@ model_args['momentum'] = .5
 # the number of epochs is the number of times you go through the full dataset
 model_args['epochs'] = 50
 # logging frequency
-model_args['log_interval'] = 100
+model_args['log_interval'] = 10
 
 
 train_loader, val_loader, test_loader= utils.parse_dataset_classification('./wallpaper_dataset/data',
                                                              splitratio=[.7,.2,.1],
                                                              batchsize=model_args['batch_size'],
                                                              normalize=False,
-                                                             downsample=False)
+                                                             downsample=True)
 
 
 print(len(train_loader)) # no of train batches
 print(len(val_loader)) # no of train batches
-print(len(test_loader)) # no of train batches
+print(len(test_loader), flush=True) # no of train batches
 input_size = 0
 
 
@@ -93,14 +100,17 @@ class CNN(nn.Module):
             self.CNN.append(nn.MaxPool2d(kernel_size=2))
             map_size = int(map_size / 2)
 
-        self.CNN.append(nn.Dropout2d())
+        self.CNN.append(nn.AdaptiveAvgPool2d((8, 8)))
+        self.CNN.append(nn.Dropout2d(p=0.2))
 
         if map_size == 0:
             raise ValueError("Mapa jest za mała – map_size po CNN wynosi 0.")
         # MLP
-        self.MLP.append(nn.Linear((map_size ** 2) * CNN_masks[-1], 40))
+        self.MLP.append(nn.Linear((8 ** 2) * CNN_masks[-1], 256))
         self.MLP.append(nn.ReLU())
-        self.MLP.append(nn.Linear(40, 17))
+        self.MLP.append(nn.Linear(256, 128))
+        self.MLP.append(nn.ReLU())
+        self.MLP.append(nn.Linear(128, 17))
 
     def forward(self, x):
 
@@ -137,7 +147,7 @@ def train(model, device, train_loader, optimizer, epoch_number):
         if batch_idx % model_args['log_interval'] == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch_number, batch_idx * len(data), len(train_loader.dataset),
-                100. * batch_idx / len(train_loader), loss.item()))
+                100. * batch_idx / len(train_loader), loss.item()), flush=True)
         train_loss += loss.item()
     train_loss /= len(train_loader)
     print('\nTrain set: Average loss: {:.4f}'.format(train_loss))
@@ -153,6 +163,10 @@ def test(model, device, test_loader, message):
             data = data.to(device)
             target = target.to(device).long()
             output = model(data)
+            #pred = output.argmax(dim=1)
+
+            #print("Predictions:", pred[:20])
+            #print("Targets:", target[:20])
             # calculate and sum up batch loss
             test_loss += F.nll_loss(output, target, reduction='mean')
             # get the index of class with the max log-probability
@@ -162,7 +176,7 @@ def test(model, device, test_loader, message):
     test_loss /= len(test_loader)
     print('{}: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
         message, test_loss, correct, len(test_loader.dataset),
-        100. * correct / len(test_loader.dataset)))
+        100. * correct / len(test_loader.dataset)), flush=True)
     return test_loss.cpu()
 
 def plot_loss(train_loss, validation_loss, title, savepath):
@@ -180,11 +194,12 @@ def plot_loss(train_loss, validation_loss, title, savepath):
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[20,10,5,5], CNN_series=[3,3,3,3], pooling=True).to(device)
+model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[16,64,128], CNN_series=[1,1,1], pooling=True).to(device)
 
 print(model)
 
-optimizer = optim.Adadelta(model.parameters(), lr=model_args['lr'])
+#optimizer = optim.SGD(model.parameters(), lr=model_args['lr'], momentum=model_args['momentum'])
+optimizer = optim.Adam(model.parameters(), lr=model_args['lr'])
 
 torch.manual_seed(model_args['seed'])
 train_loss = []

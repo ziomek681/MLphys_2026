@@ -213,7 +213,7 @@ def parse_dataset_classification(dataset_directory, labels='labels.json', label_
     datafiles=[]
     datalabels=[]
     for ld in label_data:
-        datafiles.append(str(ld["file_id"])+'_f.png')
+        datafiles.append(str(ld["file_id"])+'.png')
         datalabels.append(ld["label"])
     #le = preprocessing.LabelEncoder()
     #datalabels = le.fit_transform(datalabels)

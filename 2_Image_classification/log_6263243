@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/home/zieoli4979/MLphys_2026/2_Image_classification/./Crystal.py", line 9, in <module>
-    from wallpaper_dataset import utils
-ModuleNotFoundError: No module named 'wallpaper_dataset'
