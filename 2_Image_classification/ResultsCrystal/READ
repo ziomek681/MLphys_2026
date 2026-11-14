@@ -1,0 +1,6 @@
+1. normalna siec
+2. normalna siec, wiekszy dropout, batchnorm, weightdecay
+3. bez batchnorma, avgpool po CNN 4x4
+4. dropout w MLP
+5. ?
+6. wiecej podwarstw w CNN (2 zamiast 1), avpool po CNN 8x8, dropout w MLP wiekszy

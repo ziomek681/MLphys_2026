@@ -27,16 +27,17 @@ model_args['seed'] = 123
 model_args['batch_size'] = 128
 # learning rate is how fast it will descend
 model_args['lr'] = 1e-3
+model_args['weight_decay'] = 1e-4
 # SGD momentum (default: .5) momentum is a moving average of gradients (it helps to keep direction)
 model_args['momentum'] = .5
 # the number of epochs is the number of times you go through the full dataset
-model_args['epochs'] = 2
+model_args['epochs'] = 100
 # logging frequency
 model_args['log_interval'] = 10
 #saved checkpoint
-model_args['checkpoint_path'] = "CNN_checkpoint_test"
+model_args['checkpoint_path'] = "CNN_checkpoint_6"
 #checkpoint loaded at the start (MUST HAVE THE SAME ARCHITECTURE)
-model_args['load_checkpoint_path'] = ""
+model_args['load_checkpoint_path'] = "CNN_checkpoint_6"
 
 
 train_loader, val_loader, test_loader= utils.parse_dataset_classification('./wallpaper_dataset/data',
@@ -66,6 +67,7 @@ for batch_idx, (data, target) in enumerate(train_loader):
     plt.title(f"Label: {target[0].item()}")
     plt.axis('off')
     plt.show()
+    plt.close()
 
     break
 
@@ -86,6 +88,7 @@ class CNN(nn.Module):
 
         # CNN
         self.CNN.append(nn.Conv2d(1, CNN_masks[0], kernel_size=kernel_size, padding=padding))
+        #self.CNN.append(nn.BatchNorm2d(CNN_masks[0]))
         self.CNN.append(nn.ReLU())
 
         for j in range(CNN_series[0] - 1):
@@ -97,6 +100,7 @@ class CNN(nn.Module):
 
         for i in range(len(CNN_masks) - 1):
             self.CNN.append(nn.Conv2d(CNN_masks[i], CNN_masks[i + 1], kernel_size=kernel_size, padding=padding))
+            #self.CNN.append(nn.BatchNorm2d(CNN_masks[i + 1]))
             self.CNN.append(nn.ReLU())
 
             for j in range(CNN_series[i + 1] - 1):
@@ -107,15 +111,17 @@ class CNN(nn.Module):
             map_size = int(map_size / 2)
 
         self.CNN.append(nn.AdaptiveAvgPool2d((8, 8)))
-        self.CNN.append(nn.Dropout2d(p=0.2))
+        self.CNN.append(nn.Dropout2d(p=0.25))
 
         if map_size == 0:
             raise ValueError("Mapa jest za mała – map_size po CNN wynosi 0.")
         # MLP
         self.MLP.append(nn.Linear((8 ** 2) * CNN_masks[-1], 256))
         self.MLP.append(nn.ReLU())
+        self.MLP.append(nn.Dropout(p=0.5))
         self.MLP.append(nn.Linear(256, 128))
         self.MLP.append(nn.ReLU())
+        self.MLP.append(nn.Dropout(p=0.3))
         self.MLP.append(nn.Linear(128, 17))
 
     def forward(self, x):
@@ -204,6 +210,7 @@ def plot_loss(train_loss, validation_loss, title, savepath):
     plt.title(title)
     plt.savefig(Path(savepath) / ("LossPlot.png"), dpi=150)
     plt.show()
+    plt.close()
 
 
 def plot_conf_mat(true_labels, predicted_labels, savepath):
@@ -331,7 +338,7 @@ def plot_conf_mat(true_labels, predicted_labels, savepath):
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[16,64,128], CNN_series=[1,1,1], pooling=True).to(device)
+model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[16,64,128], CNN_series=[2,2,2], pooling=True).to(device)
 
 print(model)
 
@@ -339,7 +346,7 @@ if model_args['load_checkpoint_path'] != "":
     model.load_state_dict(torch.load(model_args['load_checkpoint_path'], map_location=device))
 
 #optimizer = optim.SGD(model.parameters(), lr=model_args['lr'], momentum=model_args['momentum'])
-optimizer = optim.Adam(model.parameters(), lr=model_args['lr'])
+optimizer = torch.optim.AdamW(model.parameters(), lr=model_args['lr'], weight_decay=model_args['weight_decay'])
 
 torch.manual_seed(model_args['seed'])
 train_loss = []

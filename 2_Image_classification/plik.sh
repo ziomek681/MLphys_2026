@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --time=01:20:00
+#SBATCH --time=00:40:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=10gb
+#SBATCH --mem=50gb
 #SBATCH --partition lem-gpu
 #SBATCH --job-name=GPU_test
 #SBATCH --mail-user=275340@student.pwr.edu.pl
