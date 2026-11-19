@@ -20,26 +20,25 @@ model_args['lr'] = .05
 # SGD momentum (default: .5) momentum is a moving average of gradients (it helps to keep direction)
 model_args['momentum'] = .5
 # the number of epochs is the number of times you go through the full dataset
-model_args['epochs'] = 50
+model_args['epochs'] = 10
 # logging frequency
 model_args['log_interval'] = 100
+
 
 
 class CNN(nn.Module):
     # this defines the structure of the CNN model
     def __init__(self):
+
         super(CNN, self).__init__()
         # convolutional layer with 5 kernels of size 3x3
         self.conv1 = nn.Conv2d(1, 5, kernel_size=3,stride=2)
         # 5 kernels of size 3x3
         self.conv2 = nn.Conv2d(5, 10, kernel_size=3)
-
-
         # 2D dropout
         self.conv2_drop = nn.Dropout2d(p=0.25)
-
         # fully connected layers
-        self.fc1 = nn.Linear(16 * 22 * 22 , 20)
+        self.fc1 = nn.Linear(10 * 11 * 11, 20)
         self.fc2 = nn.Linear(20, 10)
 
     def forward(self, x):
@@ -51,8 +50,8 @@ class CNN(nn.Module):
         x = F.relu(x)
         x = self.conv2_drop(x) # dropout regularization
         # fully connected layers
-        x = x.view(-1, 256) # 4 maps of 4x4 size gives 256 numbers
-        x = self.fc1(x) # 256 -> 20
+        x = torch.flatten(x, 1)
+        x = self.fc1(x) # 1210 -> 20
         x = F.relu(x)
         x = F.dropout(x, training=self.training) # dropout is a type of regularization
         x = self.fc2(x) # 20 -> 10
@@ -179,9 +178,34 @@ def main():
     torch.manual_seed(model_args['seed'])
     train_loss = []
     validation_loss = []
+
+    # Folder na zapisane modele
+    models_dir = script_dir / "models"
+    models_dir.mkdir(parents=True, exist_ok=True)
+
+    best_val_loss = float("inf")
+    best_epoch = 0
+    model_path = models_dir / "CNN_best.pth"
+
     for epoch_number in range(1, model_args['epochs'] + 1):
         train_loss.append(train(model, device, train_loader, optimizer, epoch_number))
-        validation_loss.append(test(model, device, validation_loader, 'Validation set'))
+
+        val_loss = test(model, device, validation_loader, 'Validation set')
+        validation_loss.append(val_loss)
+
+        # Zapisujemy model z najmniejszą stratą walidacyjną
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            best_epoch = epoch_number
+            torch.save(model.state_dict(), model_path)
+            print(f"Best model saved at epoch {epoch_number}")
+
+    print(f"Best epoch: {best_epoch}, validation loss: {best_val_loss:.6f}")
+
+    # Wczytujemy najlepszy model przed testem końcowym
+    model.load_state_dict(
+        torch.load(model_path, map_location=device, weights_only=True)
+    )
 
     _, true_labels, predicted_labels = test(
         model, device, test_loader, 'Test set', collect_predictions=True
