@@ -31,14 +31,16 @@ model_args['weight_decay'] = 1e-4
 # SGD momentum (default: .5) momentum is a moving average of gradients (it helps to keep direction)
 model_args['momentum'] = .5
 # the number of epochs is the number of times you go through the full dataset
-model_args['epochs'] = 100
+model_args['epochs'] = 200
 # logging frequency
 model_args['log_interval'] = 10
 #saved checkpoint
-model_args['checkpoint_path'] = "CNN_checkpoint_6"
+model_args['checkpoint_path'] = "CNN_checkpoint_8"
 #checkpoint loaded at the start (MUST HAVE THE SAME ARCHITECTURE)
-model_args['load_checkpoint_path'] = "CNN_checkpoint_6"
+model_args['load_checkpoint_path'] = ""
 
+
+torch.manual_seed(model_args['seed'])
 
 train_loader, val_loader, test_loader= utils.parse_dataset_classification('./wallpaper_dataset/data',
                                                              splitratio=[.7,.2,.1],
@@ -111,17 +113,17 @@ class CNN(nn.Module):
             map_size = int(map_size / 2)
 
         self.CNN.append(nn.AdaptiveAvgPool2d((8, 8)))
-        self.CNN.append(nn.Dropout2d(p=0.25))
+        #self.CNN.append(nn.Dropout2d(p=0.25))
 
         if map_size == 0:
             raise ValueError("Mapa jest za mała – map_size po CNN wynosi 0.")
         # MLP
         self.MLP.append(nn.Linear((8 ** 2) * CNN_masks[-1], 256))
         self.MLP.append(nn.ReLU())
-        self.MLP.append(nn.Dropout(p=0.5))
+        self.MLP.append(nn.Dropout(p=0.4))
         self.MLP.append(nn.Linear(256, 128))
         self.MLP.append(nn.ReLU())
-        self.MLP.append(nn.Dropout(p=0.3))
+        self.MLP.append(nn.Dropout(p=0.25))
         self.MLP.append(nn.Linear(128, 17))
 
     def forward(self, x):
@@ -338,7 +340,7 @@ def plot_conf_mat(true_labels, predicted_labels, savepath):
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[16,64,128], CNN_series=[2,2,2], pooling=True).to(device)
+model = CNN(input_size=input_size, kernel_size=3, CNN_masks=[16,64,128], CNN_series=[1,1,1], pooling=True).to(device)
 
 print(model)
 
@@ -348,7 +350,6 @@ if model_args['load_checkpoint_path'] != "":
 #optimizer = optim.SGD(model.parameters(), lr=model_args['lr'], momentum=model_args['momentum'])
 optimizer = torch.optim.AdamW(model.parameters(), lr=model_args['lr'], weight_decay=model_args['weight_decay'])
 
-torch.manual_seed(model_args['seed'])
 train_loss = []
 val_loss = []
 best_val_loss = float("inf")

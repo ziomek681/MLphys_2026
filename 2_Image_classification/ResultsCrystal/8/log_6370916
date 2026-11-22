@@ -1,0 +1,2301 @@
+1.26.4
+4.10.0
+10000
+54
+16
+8
+Przykładowe dane: torch.Size([1, 500, 500])
+Etykieta: tensor(0.)
+CNN(
+  (CNN): ModuleList(
+    (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(16, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): ReLU()
+    (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU()
+    (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (9): AdaptiveAvgPool2d(output_size=(8, 8))
+  )
+  (MLP): ModuleList(
+    (0): Linear(in_features=8192, out_features=256, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.4, inplace=False)
+    (3): Linear(in_features=256, out_features=128, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.25, inplace=False)
+    (6): Linear(in_features=128, out_features=17, bias=True)
+  )
+)
+Train Epoch: 1 [0/7000 (0%)]	Loss: 2.831037
+Train Epoch: 1 [1280/7000 (19%)]	Loss: 2.841573
+Train Epoch: 1 [2560/7000 (37%)]	Loss: 2.831848
+Train Epoch: 1 [3840/7000 (56%)]	Loss: 2.824503
+Train Epoch: 1 [5120/7000 (74%)]	Loss: 2.826724
+Train Epoch: 1 [6400/7000 (93%)]	Loss: 2.803568
+
+Train set: Average loss: 2.8295
+Validation set: Average loss: 2.7978, Accuracy: 147/2000 (7%)
+
+Epoch time: 9.0113 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 2 [0/7000 (0%)]	Loss: 2.785541
+Train Epoch: 2 [1280/7000 (19%)]	Loss: 2.779345
+Train Epoch: 2 [2560/7000 (37%)]	Loss: 2.712639
+Train Epoch: 2 [3840/7000 (56%)]	Loss: 2.654947
+Train Epoch: 2 [5120/7000 (74%)]	Loss: 2.612722
+Train Epoch: 2 [6400/7000 (93%)]	Loss: 2.523757
+
+Train set: Average loss: 2.6769
+Validation set: Average loss: 2.5740, Accuracy: 233/2000 (12%)
+
+Epoch time: 7.1437 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 3 [0/7000 (0%)]	Loss: 2.590038
+Train Epoch: 3 [1280/7000 (19%)]	Loss: 2.593216
+Train Epoch: 3 [2560/7000 (37%)]	Loss: 2.471600
+Train Epoch: 3 [3840/7000 (56%)]	Loss: 2.627510
+Train Epoch: 3 [5120/7000 (74%)]	Loss: 2.551246
+Train Epoch: 3 [6400/7000 (93%)]	Loss: 2.458200
+
+Train set: Average loss: 2.5575
+Validation set: Average loss: 2.5091, Accuracy: 247/2000 (12%)
+
+Epoch time: 7.1245 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 4 [0/7000 (0%)]	Loss: 2.459330
+Train Epoch: 4 [1280/7000 (19%)]	Loss: 2.535715
+Train Epoch: 4 [2560/7000 (37%)]	Loss: 2.514664
+Train Epoch: 4 [3840/7000 (56%)]	Loss: 2.543409
+Train Epoch: 4 [5120/7000 (74%)]	Loss: 2.545579
+Train Epoch: 4 [6400/7000 (93%)]	Loss: 2.632275
+
+Train set: Average loss: 2.5335
+Validation set: Average loss: 2.4619, Accuracy: 275/2000 (14%)
+
+Epoch time: 7.1241 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 5 [0/7000 (0%)]	Loss: 2.497587
+Train Epoch: 5 [1280/7000 (19%)]	Loss: 2.591197
+Train Epoch: 5 [2560/7000 (37%)]	Loss: 2.371769
+Train Epoch: 5 [3840/7000 (56%)]	Loss: 2.491777
+Train Epoch: 5 [5120/7000 (74%)]	Loss: 2.469762
+Train Epoch: 5 [6400/7000 (93%)]	Loss: 2.514459
+
+Train set: Average loss: 2.4834
+Validation set: Average loss: 2.4551, Accuracy: 273/2000 (14%)
+
+Epoch time: 7.1323 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 6 [0/7000 (0%)]	Loss: 2.468872
+Train Epoch: 6 [1280/7000 (19%)]	Loss: 2.386755
+Train Epoch: 6 [2560/7000 (37%)]	Loss: 2.529643
+Train Epoch: 6 [3840/7000 (56%)]	Loss: 2.503595
+Train Epoch: 6 [5120/7000 (74%)]	Loss: 2.382311
+Train Epoch: 6 [6400/7000 (93%)]	Loss: 2.507147
+
+Train set: Average loss: 2.4532
+Validation set: Average loss: 2.4331, Accuracy: 283/2000 (14%)
+
+Epoch time: 7.1248 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 7 [0/7000 (0%)]	Loss: 2.454691
+Train Epoch: 7 [1280/7000 (19%)]	Loss: 2.357393
+Train Epoch: 7 [2560/7000 (37%)]	Loss: 2.409328
+Train Epoch: 7 [3840/7000 (56%)]	Loss: 2.423072
+Train Epoch: 7 [5120/7000 (74%)]	Loss: 2.445887
+Train Epoch: 7 [6400/7000 (93%)]	Loss: 2.524868
+
+Train set: Average loss: 2.4351
+Validation set: Average loss: 2.3822, Accuracy: 300/2000 (15%)
+
+Epoch time: 7.1484 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 8 [0/7000 (0%)]	Loss: 2.392959
+Train Epoch: 8 [1280/7000 (19%)]	Loss: 2.394887
+Train Epoch: 8 [2560/7000 (37%)]	Loss: 2.399056
+Train Epoch: 8 [3840/7000 (56%)]	Loss: 2.365463
+Train Epoch: 8 [5120/7000 (74%)]	Loss: 2.433172
+Train Epoch: 8 [6400/7000 (93%)]	Loss: 2.347319
+
+Train set: Average loss: 2.4179
+Validation set: Average loss: 2.3770, Accuracy: 291/2000 (15%)
+
+Epoch time: 7.1501 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 9 [0/7000 (0%)]	Loss: 2.356845
+Train Epoch: 9 [1280/7000 (19%)]	Loss: 2.364799
+Train Epoch: 9 [2560/7000 (37%)]	Loss: 2.373560
+Train Epoch: 9 [3840/7000 (56%)]	Loss: 2.473486
+Train Epoch: 9 [5120/7000 (74%)]	Loss: 2.332424
+Train Epoch: 9 [6400/7000 (93%)]	Loss: 2.412365
+
+Train set: Average loss: 2.3950
+Validation set: Average loss: 2.3566, Accuracy: 309/2000 (15%)
+
+Epoch time: 7.1389 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 10 [0/7000 (0%)]	Loss: 2.434905
+Train Epoch: 10 [1280/7000 (19%)]	Loss: 2.348811
+Train Epoch: 10 [2560/7000 (37%)]	Loss: 2.374444
+Train Epoch: 10 [3840/7000 (56%)]	Loss: 2.379934
+Train Epoch: 10 [5120/7000 (74%)]	Loss: 2.450545
+Train Epoch: 10 [6400/7000 (93%)]	Loss: 2.369104
+
+Train set: Average loss: 2.3934
+Validation set: Average loss: 2.3747, Accuracy: 313/2000 (16%)
+
+Epoch time: 7.1668 seconds
+Train Epoch: 11 [0/7000 (0%)]	Loss: 2.397457
+Train Epoch: 11 [1280/7000 (19%)]	Loss: 2.473365
+Train Epoch: 11 [2560/7000 (37%)]	Loss: 2.345974
+Train Epoch: 11 [3840/7000 (56%)]	Loss: 2.312838
+Train Epoch: 11 [5120/7000 (74%)]	Loss: 2.449684
+Train Epoch: 11 [6400/7000 (93%)]	Loss: 2.416476
+
+Train set: Average loss: 2.3830
+Validation set: Average loss: 2.3437, Accuracy: 292/2000 (15%)
+
+Epoch time: 7.1483 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 12 [0/7000 (0%)]	Loss: 2.384115
+Train Epoch: 12 [1280/7000 (19%)]	Loss: 2.258134
+Train Epoch: 12 [2560/7000 (37%)]	Loss: 2.387050
+Train Epoch: 12 [3840/7000 (56%)]	Loss: 2.284746
+Train Epoch: 12 [5120/7000 (74%)]	Loss: 2.362711
+Train Epoch: 12 [6400/7000 (93%)]	Loss: 2.352875
+
+Train set: Average loss: 2.3610
+Validation set: Average loss: 2.3237, Accuracy: 314/2000 (16%)
+
+Epoch time: 7.1316 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 13 [0/7000 (0%)]	Loss: 2.503478
+Train Epoch: 13 [1280/7000 (19%)]	Loss: 2.311680
+Train Epoch: 13 [2560/7000 (37%)]	Loss: 2.339829
+Train Epoch: 13 [3840/7000 (56%)]	Loss: 2.366802
+Train Epoch: 13 [5120/7000 (74%)]	Loss: 2.250751
+Train Epoch: 13 [6400/7000 (93%)]	Loss: 2.254739
+
+Train set: Average loss: 2.3706
+Validation set: Average loss: 2.3280, Accuracy: 330/2000 (16%)
+
+Epoch time: 7.1497 seconds
+Train Epoch: 14 [0/7000 (0%)]	Loss: 2.414140
+Train Epoch: 14 [1280/7000 (19%)]	Loss: 2.401747
+Train Epoch: 14 [2560/7000 (37%)]	Loss: 2.340963
+Train Epoch: 14 [3840/7000 (56%)]	Loss: 2.340237
+Train Epoch: 14 [5120/7000 (74%)]	Loss: 2.433585
+Train Epoch: 14 [6400/7000 (93%)]	Loss: 2.294115
+
+Train set: Average loss: 2.3570
+Validation set: Average loss: 2.3328, Accuracy: 323/2000 (16%)
+
+Epoch time: 7.1625 seconds
+Train Epoch: 15 [0/7000 (0%)]	Loss: 2.402097
+Train Epoch: 15 [1280/7000 (19%)]	Loss: 2.297903
+Train Epoch: 15 [2560/7000 (37%)]	Loss: 2.256856
+Train Epoch: 15 [3840/7000 (56%)]	Loss: 2.350982
+Train Epoch: 15 [5120/7000 (74%)]	Loss: 2.324799
+Train Epoch: 15 [6400/7000 (93%)]	Loss: 2.326312
+
+Train set: Average loss: 2.3334
+Validation set: Average loss: 2.2976, Accuracy: 322/2000 (16%)
+
+Epoch time: 7.1553 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 16 [0/7000 (0%)]	Loss: 2.247195
+Train Epoch: 16 [1280/7000 (19%)]	Loss: 2.364576
+Train Epoch: 16 [2560/7000 (37%)]	Loss: 2.261914
+Train Epoch: 16 [3840/7000 (56%)]	Loss: 2.270683
+Train Epoch: 16 [5120/7000 (74%)]	Loss: 2.293638
+Train Epoch: 16 [6400/7000 (93%)]	Loss: 2.328537
+
+Train set: Average loss: 2.3272
+Validation set: Average loss: 2.3127, Accuracy: 320/2000 (16%)
+
+Epoch time: 7.1676 seconds
+Train Epoch: 17 [0/7000 (0%)]	Loss: 2.282322
+Train Epoch: 17 [1280/7000 (19%)]	Loss: 2.335144
+Train Epoch: 17 [2560/7000 (37%)]	Loss: 2.317027
+Train Epoch: 17 [3840/7000 (56%)]	Loss: 2.216734
+Train Epoch: 17 [5120/7000 (74%)]	Loss: 2.276767
+Train Epoch: 17 [6400/7000 (93%)]	Loss: 2.376267
+
+Train set: Average loss: 2.3037
+Validation set: Average loss: 2.2669, Accuracy: 350/2000 (18%)
+
+Epoch time: 7.1781 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 18 [0/7000 (0%)]	Loss: 2.308519
+Train Epoch: 18 [1280/7000 (19%)]	Loss: 2.300960
+Train Epoch: 18 [2560/7000 (37%)]	Loss: 2.193496
+Train Epoch: 18 [3840/7000 (56%)]	Loss: 2.290162
+Train Epoch: 18 [5120/7000 (74%)]	Loss: 2.394165
+Train Epoch: 18 [6400/7000 (93%)]	Loss: 2.332721
+
+Train set: Average loss: 2.3050
+Validation set: Average loss: 2.2745, Accuracy: 335/2000 (17%)
+
+Epoch time: 7.1576 seconds
+Train Epoch: 19 [0/7000 (0%)]	Loss: 2.297087
+Train Epoch: 19 [1280/7000 (19%)]	Loss: 2.301284
+Train Epoch: 19 [2560/7000 (37%)]	Loss: 2.235822
+Train Epoch: 19 [3840/7000 (56%)]	Loss: 2.296199
+Train Epoch: 19 [5120/7000 (74%)]	Loss: 2.282642
+Train Epoch: 19 [6400/7000 (93%)]	Loss: 2.338723
+
+Train set: Average loss: 2.2938
+Validation set: Average loss: 2.2631, Accuracy: 353/2000 (18%)
+
+Epoch time: 7.1499 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 20 [0/7000 (0%)]	Loss: 2.259880
+Train Epoch: 20 [1280/7000 (19%)]	Loss: 2.208946
+Train Epoch: 20 [2560/7000 (37%)]	Loss: 2.329822
+Train Epoch: 20 [3840/7000 (56%)]	Loss: 2.199975
+Train Epoch: 20 [5120/7000 (74%)]	Loss: 2.252963
+Train Epoch: 20 [6400/7000 (93%)]	Loss: 2.409541
+
+Train set: Average loss: 2.2985
+Validation set: Average loss: 2.2446, Accuracy: 352/2000 (18%)
+
+Epoch time: 7.1518 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 21 [0/7000 (0%)]	Loss: 2.379390
+Train Epoch: 21 [1280/7000 (19%)]	Loss: 2.149757
+Train Epoch: 21 [2560/7000 (37%)]	Loss: 2.197299
+Train Epoch: 21 [3840/7000 (56%)]	Loss: 2.248164
+Train Epoch: 21 [5120/7000 (74%)]	Loss: 2.268021
+Train Epoch: 21 [6400/7000 (93%)]	Loss: 2.305763
+
+Train set: Average loss: 2.2716
+Validation set: Average loss: 2.2708, Accuracy: 338/2000 (17%)
+
+Epoch time: 7.1766 seconds
+Train Epoch: 22 [0/7000 (0%)]	Loss: 2.410010
+Train Epoch: 22 [1280/7000 (19%)]	Loss: 2.312299
+Train Epoch: 22 [2560/7000 (37%)]	Loss: 2.320287
+Train Epoch: 22 [3840/7000 (56%)]	Loss: 2.249376
+Train Epoch: 22 [5120/7000 (74%)]	Loss: 2.235748
+Train Epoch: 22 [6400/7000 (93%)]	Loss: 2.324747
+
+Train set: Average loss: 2.2812
+Validation set: Average loss: 2.2340, Accuracy: 370/2000 (18%)
+
+Epoch time: 7.1865 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 23 [0/7000 (0%)]	Loss: 2.283366
+Train Epoch: 23 [1280/7000 (19%)]	Loss: 2.336725
+Train Epoch: 23 [2560/7000 (37%)]	Loss: 2.413795
+Train Epoch: 23 [3840/7000 (56%)]	Loss: 2.355013
+Train Epoch: 23 [5120/7000 (74%)]	Loss: 2.375245
+Train Epoch: 23 [6400/7000 (93%)]	Loss: 2.273320
+
+Train set: Average loss: 2.2799
+Validation set: Average loss: 2.2220, Accuracy: 364/2000 (18%)
+
+Epoch time: 7.2069 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 24 [0/7000 (0%)]	Loss: 2.280025
+Train Epoch: 24 [1280/7000 (19%)]	Loss: 2.342597
+Train Epoch: 24 [2560/7000 (37%)]	Loss: 2.325623
+Train Epoch: 24 [3840/7000 (56%)]	Loss: 2.146177
+Train Epoch: 24 [5120/7000 (74%)]	Loss: 2.250214
+Train Epoch: 24 [6400/7000 (93%)]	Loss: 2.235493
+
+Train set: Average loss: 2.2688
+Validation set: Average loss: 2.2157, Accuracy: 354/2000 (18%)
+
+Epoch time: 7.1822 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 25 [0/7000 (0%)]	Loss: 2.214570
+Train Epoch: 25 [1280/7000 (19%)]	Loss: 2.211274
+Train Epoch: 25 [2560/7000 (37%)]	Loss: 2.163788
+Train Epoch: 25 [3840/7000 (56%)]	Loss: 2.252108
+Train Epoch: 25 [5120/7000 (74%)]	Loss: 2.370911
+Train Epoch: 25 [6400/7000 (93%)]	Loss: 2.243311
+
+Train set: Average loss: 2.2577
+Validation set: Average loss: 2.2194, Accuracy: 369/2000 (18%)
+
+Epoch time: 7.1942 seconds
+Train Epoch: 26 [0/7000 (0%)]	Loss: 2.203320
+Train Epoch: 26 [1280/7000 (19%)]	Loss: 2.298765
+Train Epoch: 26 [2560/7000 (37%)]	Loss: 2.316432
+Train Epoch: 26 [3840/7000 (56%)]	Loss: 2.229021
+Train Epoch: 26 [5120/7000 (74%)]	Loss: 2.203695
+Train Epoch: 26 [6400/7000 (93%)]	Loss: 2.258189
+
+Train set: Average loss: 2.2429
+Validation set: Average loss: 2.1892, Accuracy: 396/2000 (20%)
+
+Epoch time: 7.1935 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 27 [0/7000 (0%)]	Loss: 2.253340
+Train Epoch: 27 [1280/7000 (19%)]	Loss: 2.179016
+Train Epoch: 27 [2560/7000 (37%)]	Loss: 2.317408
+Train Epoch: 27 [3840/7000 (56%)]	Loss: 2.203834
+Train Epoch: 27 [5120/7000 (74%)]	Loss: 2.259377
+Train Epoch: 27 [6400/7000 (93%)]	Loss: 2.363126
+
+Train set: Average loss: 2.2447
+Validation set: Average loss: 2.2073, Accuracy: 371/2000 (19%)
+
+Epoch time: 7.1915 seconds
+Train Epoch: 28 [0/7000 (0%)]	Loss: 2.196782
+Train Epoch: 28 [1280/7000 (19%)]	Loss: 2.222098
+Train Epoch: 28 [2560/7000 (37%)]	Loss: 2.273048
+Train Epoch: 28 [3840/7000 (56%)]	Loss: 2.184584
+Train Epoch: 28 [5120/7000 (74%)]	Loss: 2.110512
+Train Epoch: 28 [6400/7000 (93%)]	Loss: 2.147917
+
+Train set: Average loss: 2.2321
+Validation set: Average loss: 2.1813, Accuracy: 359/2000 (18%)
+
+Epoch time: 7.1509 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 29 [0/7000 (0%)]	Loss: 2.105599
+Train Epoch: 29 [1280/7000 (19%)]	Loss: 2.124207
+Train Epoch: 29 [2560/7000 (37%)]	Loss: 2.267063
+Train Epoch: 29 [3840/7000 (56%)]	Loss: 2.142096
+Train Epoch: 29 [5120/7000 (74%)]	Loss: 2.265472
+Train Epoch: 29 [6400/7000 (93%)]	Loss: 2.253774
+
+Train set: Average loss: 2.2280
+Validation set: Average loss: 2.1819, Accuracy: 368/2000 (18%)
+
+Epoch time: 7.1545 seconds
+Train Epoch: 30 [0/7000 (0%)]	Loss: 2.225720
+Train Epoch: 30 [1280/7000 (19%)]	Loss: 2.179458
+Train Epoch: 30 [2560/7000 (37%)]	Loss: 2.139452
+Train Epoch: 30 [3840/7000 (56%)]	Loss: 2.078396
+Train Epoch: 30 [5120/7000 (74%)]	Loss: 2.191039
+Train Epoch: 30 [6400/7000 (93%)]	Loss: 2.372884
+
+Train set: Average loss: 2.2187
+Validation set: Average loss: 2.1865, Accuracy: 380/2000 (19%)
+
+Epoch time: 7.1567 seconds
+Train Epoch: 31 [0/7000 (0%)]	Loss: 2.165025
+Train Epoch: 31 [1280/7000 (19%)]	Loss: 2.146347
+Train Epoch: 31 [2560/7000 (37%)]	Loss: 2.118798
+Train Epoch: 31 [3840/7000 (56%)]	Loss: 2.243201
+Train Epoch: 31 [5120/7000 (74%)]	Loss: 2.319212
+Train Epoch: 31 [6400/7000 (93%)]	Loss: 2.292642
+
+Train set: Average loss: 2.2167
+Validation set: Average loss: 2.1677, Accuracy: 390/2000 (20%)
+
+Epoch time: 7.1490 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 32 [0/7000 (0%)]	Loss: 2.327366
+Train Epoch: 32 [1280/7000 (19%)]	Loss: 2.253331
+Train Epoch: 32 [2560/7000 (37%)]	Loss: 2.249532
+Train Epoch: 32 [3840/7000 (56%)]	Loss: 2.179072
+Train Epoch: 32 [5120/7000 (74%)]	Loss: 2.233236
+Train Epoch: 32 [6400/7000 (93%)]	Loss: 2.136165
+
+Train set: Average loss: 2.2127
+Validation set: Average loss: 2.1881, Accuracy: 361/2000 (18%)
+
+Epoch time: 7.1751 seconds
+Train Epoch: 33 [0/7000 (0%)]	Loss: 2.270136
+Train Epoch: 33 [1280/7000 (19%)]	Loss: 2.250394
+Train Epoch: 33 [2560/7000 (37%)]	Loss: 2.145633
+Train Epoch: 33 [3840/7000 (56%)]	Loss: 2.262997
+Train Epoch: 33 [5120/7000 (74%)]	Loss: 2.312121
+Train Epoch: 33 [6400/7000 (93%)]	Loss: 2.126532
+
+Train set: Average loss: 2.2021
+Validation set: Average loss: 2.1575, Accuracy: 367/2000 (18%)
+
+Epoch time: 7.1692 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 34 [0/7000 (0%)]	Loss: 2.074033
+Train Epoch: 34 [1280/7000 (19%)]	Loss: 2.266843
+Train Epoch: 34 [2560/7000 (37%)]	Loss: 2.264021
+Train Epoch: 34 [3840/7000 (56%)]	Loss: 2.214177
+Train Epoch: 34 [5120/7000 (74%)]	Loss: 2.233347
+Train Epoch: 34 [6400/7000 (93%)]	Loss: 2.149681
+
+Train set: Average loss: 2.1998
+Validation set: Average loss: 2.1850, Accuracy: 363/2000 (18%)
+
+Epoch time: 7.1580 seconds
+Train Epoch: 35 [0/7000 (0%)]	Loss: 2.186039
+Train Epoch: 35 [1280/7000 (19%)]	Loss: 2.299415
+Train Epoch: 35 [2560/7000 (37%)]	Loss: 2.332933
+Train Epoch: 35 [3840/7000 (56%)]	Loss: 2.197014
+Train Epoch: 35 [5120/7000 (74%)]	Loss: 2.188909
+Train Epoch: 35 [6400/7000 (93%)]	Loss: 2.155791
+
+Train set: Average loss: 2.1964
+Validation set: Average loss: 2.1570, Accuracy: 380/2000 (19%)
+
+Epoch time: 7.1541 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 36 [0/7000 (0%)]	Loss: 2.223813
+Train Epoch: 36 [1280/7000 (19%)]	Loss: 2.217121
+Train Epoch: 36 [2560/7000 (37%)]	Loss: 2.212517
+Train Epoch: 36 [3840/7000 (56%)]	Loss: 2.209825
+Train Epoch: 36 [5120/7000 (74%)]	Loss: 2.201063
+Train Epoch: 36 [6400/7000 (93%)]	Loss: 2.215845
+
+Train set: Average loss: 2.1962
+Validation set: Average loss: 2.1547, Accuracy: 386/2000 (19%)
+
+Epoch time: 7.2027 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 37 [0/7000 (0%)]	Loss: 2.185133
+Train Epoch: 37 [1280/7000 (19%)]	Loss: 2.305944
+Train Epoch: 37 [2560/7000 (37%)]	Loss: 2.227011
+Train Epoch: 37 [3840/7000 (56%)]	Loss: 2.257057
+Train Epoch: 37 [5120/7000 (74%)]	Loss: 2.094753
+Train Epoch: 37 [6400/7000 (93%)]	Loss: 2.170857
+
+Train set: Average loss: 2.1925
+Validation set: Average loss: 2.1410, Accuracy: 403/2000 (20%)
+
+Epoch time: 7.1455 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 38 [0/7000 (0%)]	Loss: 2.148667
+Train Epoch: 38 [1280/7000 (19%)]	Loss: 2.081007
+Train Epoch: 38 [2560/7000 (37%)]	Loss: 2.097795
+Train Epoch: 38 [3840/7000 (56%)]	Loss: 2.158911
+Train Epoch: 38 [5120/7000 (74%)]	Loss: 2.176036
+Train Epoch: 38 [6400/7000 (93%)]	Loss: 2.128027
+
+Train set: Average loss: 2.1839
+Validation set: Average loss: 2.1393, Accuracy: 393/2000 (20%)
+
+Epoch time: 7.1435 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 39 [0/7000 (0%)]	Loss: 2.049159
+Train Epoch: 39 [1280/7000 (19%)]	Loss: 2.155954
+Train Epoch: 39 [2560/7000 (37%)]	Loss: 2.230391
+Train Epoch: 39 [3840/7000 (56%)]	Loss: 2.165279
+Train Epoch: 39 [5120/7000 (74%)]	Loss: 2.198552
+Train Epoch: 39 [6400/7000 (93%)]	Loss: 2.156742
+
+Train set: Average loss: 2.1863
+Validation set: Average loss: 2.1416, Accuracy: 407/2000 (20%)
+
+Epoch time: 7.1602 seconds
+Train Epoch: 40 [0/7000 (0%)]	Loss: 2.232906
+Train Epoch: 40 [1280/7000 (19%)]	Loss: 2.091844
+Train Epoch: 40 [2560/7000 (37%)]	Loss: 2.139844
+Train Epoch: 40 [3840/7000 (56%)]	Loss: 2.166737
+Train Epoch: 40 [5120/7000 (74%)]	Loss: 2.191792
+Train Epoch: 40 [6400/7000 (93%)]	Loss: 2.188174
+
+Train set: Average loss: 2.1594
+Validation set: Average loss: 2.1099, Accuracy: 413/2000 (21%)
+
+Epoch time: 7.1603 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 41 [0/7000 (0%)]	Loss: 2.176599
+Train Epoch: 41 [1280/7000 (19%)]	Loss: 2.173915
+Train Epoch: 41 [2560/7000 (37%)]	Loss: 2.155782
+Train Epoch: 41 [3840/7000 (56%)]	Loss: 2.197726
+Train Epoch: 41 [5120/7000 (74%)]	Loss: 1.992738
+Train Epoch: 41 [6400/7000 (93%)]	Loss: 2.089904
+
+Train set: Average loss: 2.1700
+Validation set: Average loss: 2.1378, Accuracy: 402/2000 (20%)
+
+Epoch time: 7.1467 seconds
+Train Epoch: 42 [0/7000 (0%)]	Loss: 2.197041
+Train Epoch: 42 [1280/7000 (19%)]	Loss: 2.199558
+Train Epoch: 42 [2560/7000 (37%)]	Loss: 2.224014
+Train Epoch: 42 [3840/7000 (56%)]	Loss: 2.153153
+Train Epoch: 42 [5120/7000 (74%)]	Loss: 2.128416
+Train Epoch: 42 [6400/7000 (93%)]	Loss: 2.144539
+
+Train set: Average loss: 2.1616
+Validation set: Average loss: 2.1180, Accuracy: 407/2000 (20%)
+
+Epoch time: 7.2132 seconds
+Train Epoch: 43 [0/7000 (0%)]	Loss: 2.193609
+Train Epoch: 43 [1280/7000 (19%)]	Loss: 2.184455
+Train Epoch: 43 [2560/7000 (37%)]	Loss: 2.097770
+Train Epoch: 43 [3840/7000 (56%)]	Loss: 2.107548
+Train Epoch: 43 [5120/7000 (74%)]	Loss: 2.101442
+Train Epoch: 43 [6400/7000 (93%)]	Loss: 2.012916
+
+Train set: Average loss: 2.1602
+Validation set: Average loss: 2.1117, Accuracy: 427/2000 (21%)
+
+Epoch time: 7.1356 seconds
+Train Epoch: 44 [0/7000 (0%)]	Loss: 2.124028
+Train Epoch: 44 [1280/7000 (19%)]	Loss: 2.165128
+Train Epoch: 44 [2560/7000 (37%)]	Loss: 2.184687
+Train Epoch: 44 [3840/7000 (56%)]	Loss: 2.043890
+Train Epoch: 44 [5120/7000 (74%)]	Loss: 2.041162
+Train Epoch: 44 [6400/7000 (93%)]	Loss: 2.105875
+
+Train set: Average loss: 2.1504
+Validation set: Average loss: 2.1004, Accuracy: 455/2000 (23%)
+
+Epoch time: 7.1590 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 45 [0/7000 (0%)]	Loss: 2.122475
+Train Epoch: 45 [1280/7000 (19%)]	Loss: 2.001282
+Train Epoch: 45 [2560/7000 (37%)]	Loss: 2.019451
+Train Epoch: 45 [3840/7000 (56%)]	Loss: 2.105310
+Train Epoch: 45 [5120/7000 (74%)]	Loss: 2.073081
+Train Epoch: 45 [6400/7000 (93%)]	Loss: 2.151517
+
+Train set: Average loss: 2.1374
+Validation set: Average loss: 2.1019, Accuracy: 426/2000 (21%)
+
+Epoch time: 7.1541 seconds
+Train Epoch: 46 [0/7000 (0%)]	Loss: 2.156072
+Train Epoch: 46 [1280/7000 (19%)]	Loss: 2.152070
+Train Epoch: 46 [2560/7000 (37%)]	Loss: 2.281926
+Train Epoch: 46 [3840/7000 (56%)]	Loss: 2.226706
+Train Epoch: 46 [5120/7000 (74%)]	Loss: 2.119910
+Train Epoch: 46 [6400/7000 (93%)]	Loss: 2.070534
+
+Train set: Average loss: 2.1280
+Validation set: Average loss: 2.1129, Accuracy: 430/2000 (22%)
+
+Epoch time: 7.1513 seconds
+Train Epoch: 47 [0/7000 (0%)]	Loss: 2.085516
+Train Epoch: 47 [1280/7000 (19%)]	Loss: 2.107905
+Train Epoch: 47 [2560/7000 (37%)]	Loss: 2.088716
+Train Epoch: 47 [3840/7000 (56%)]	Loss: 2.159179
+Train Epoch: 47 [5120/7000 (74%)]	Loss: 2.168702
+Train Epoch: 47 [6400/7000 (93%)]	Loss: 2.004127
+
+Train set: Average loss: 2.1213
+Validation set: Average loss: 2.0744, Accuracy: 448/2000 (22%)
+
+Epoch time: 7.1935 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 48 [0/7000 (0%)]	Loss: 2.071366
+Train Epoch: 48 [1280/7000 (19%)]	Loss: 2.064015
+Train Epoch: 48 [2560/7000 (37%)]	Loss: 2.103664
+Train Epoch: 48 [3840/7000 (56%)]	Loss: 2.059239
+Train Epoch: 48 [5120/7000 (74%)]	Loss: 2.100253
+Train Epoch: 48 [6400/7000 (93%)]	Loss: 2.068374
+
+Train set: Average loss: 2.1166
+Validation set: Average loss: 2.1015, Accuracy: 429/2000 (21%)
+
+Epoch time: 7.1475 seconds
+Train Epoch: 49 [0/7000 (0%)]	Loss: 2.178204
+Train Epoch: 49 [1280/7000 (19%)]	Loss: 2.119879
+Train Epoch: 49 [2560/7000 (37%)]	Loss: 2.261528
+Train Epoch: 49 [3840/7000 (56%)]	Loss: 2.073340
+Train Epoch: 49 [5120/7000 (74%)]	Loss: 2.027051
+Train Epoch: 49 [6400/7000 (93%)]	Loss: 2.061465
+
+Train set: Average loss: 2.1213
+Validation set: Average loss: 2.0699, Accuracy: 459/2000 (23%)
+
+Epoch time: 7.1584 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 50 [0/7000 (0%)]	Loss: 1.908429
+Train Epoch: 50 [1280/7000 (19%)]	Loss: 2.132596
+Train Epoch: 50 [2560/7000 (37%)]	Loss: 1.969200
+Train Epoch: 50 [3840/7000 (56%)]	Loss: 2.159081
+Train Epoch: 50 [5120/7000 (74%)]	Loss: 2.107762
+Train Epoch: 50 [6400/7000 (93%)]	Loss: 2.154889
+
+Train set: Average loss: 2.1142
+Validation set: Average loss: 2.0722, Accuracy: 460/2000 (23%)
+
+Epoch time: 7.1598 seconds
+Train Epoch: 51 [0/7000 (0%)]	Loss: 2.089626
+Train Epoch: 51 [1280/7000 (19%)]	Loss: 2.174427
+Train Epoch: 51 [2560/7000 (37%)]	Loss: 2.113216
+Train Epoch: 51 [3840/7000 (56%)]	Loss: 2.190240
+Train Epoch: 51 [5120/7000 (74%)]	Loss: 2.044378
+Train Epoch: 51 [6400/7000 (93%)]	Loss: 2.119138
+
+Train set: Average loss: 2.1070
+Validation set: Average loss: 2.0680, Accuracy: 476/2000 (24%)
+
+Epoch time: 7.1824 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 52 [0/7000 (0%)]	Loss: 2.224950
+Train Epoch: 52 [1280/7000 (19%)]	Loss: 2.214428
+Train Epoch: 52 [2560/7000 (37%)]	Loss: 2.177162
+Train Epoch: 52 [3840/7000 (56%)]	Loss: 2.107802
+Train Epoch: 52 [5120/7000 (74%)]	Loss: 2.147694
+Train Epoch: 52 [6400/7000 (93%)]	Loss: 2.131567
+
+Train set: Average loss: 2.1097
+Validation set: Average loss: 2.0515, Accuracy: 471/2000 (24%)
+
+Epoch time: 7.1942 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 53 [0/7000 (0%)]	Loss: 1.973359
+Train Epoch: 53 [1280/7000 (19%)]	Loss: 2.041576
+Train Epoch: 53 [2560/7000 (37%)]	Loss: 2.032898
+Train Epoch: 53 [3840/7000 (56%)]	Loss: 1.956119
+Train Epoch: 53 [5120/7000 (74%)]	Loss: 2.139009
+Train Epoch: 53 [6400/7000 (93%)]	Loss: 1.983972
+
+Train set: Average loss: 2.1007
+Validation set: Average loss: 2.0770, Accuracy: 448/2000 (22%)
+
+Epoch time: 7.1512 seconds
+Train Epoch: 54 [0/7000 (0%)]	Loss: 2.165742
+Train Epoch: 54 [1280/7000 (19%)]	Loss: 2.054378
+Train Epoch: 54 [2560/7000 (37%)]	Loss: 1.981442
+Train Epoch: 54 [3840/7000 (56%)]	Loss: 2.014656
+Train Epoch: 54 [5120/7000 (74%)]	Loss: 2.142888
+Train Epoch: 54 [6400/7000 (93%)]	Loss: 2.126184
+
+Train set: Average loss: 2.1033
+Validation set: Average loss: 2.0610, Accuracy: 445/2000 (22%)
+
+Epoch time: 7.1599 seconds
+Train Epoch: 55 [0/7000 (0%)]	Loss: 2.135891
+Train Epoch: 55 [1280/7000 (19%)]	Loss: 2.159773
+Train Epoch: 55 [2560/7000 (37%)]	Loss: 2.122730
+Train Epoch: 55 [3840/7000 (56%)]	Loss: 2.102989
+Train Epoch: 55 [5120/7000 (74%)]	Loss: 1.972197
+Train Epoch: 55 [6400/7000 (93%)]	Loss: 2.004425
+
+Train set: Average loss: 2.0904
+Validation set: Average loss: 2.0816, Accuracy: 465/2000 (23%)
+
+Epoch time: 7.1591 seconds
+Train Epoch: 56 [0/7000 (0%)]	Loss: 2.130617
+Train Epoch: 56 [1280/7000 (19%)]	Loss: 2.040555
+Train Epoch: 56 [2560/7000 (37%)]	Loss: 2.014958
+Train Epoch: 56 [3840/7000 (56%)]	Loss: 2.067916
+Train Epoch: 56 [5120/7000 (74%)]	Loss: 2.129819
+Train Epoch: 56 [6400/7000 (93%)]	Loss: 2.167776
+
+Train set: Average loss: 2.0951
+Validation set: Average loss: 2.0631, Accuracy: 477/2000 (24%)
+
+Epoch time: 7.1686 seconds
+Train Epoch: 57 [0/7000 (0%)]	Loss: 2.131529
+Train Epoch: 57 [1280/7000 (19%)]	Loss: 2.204865
+Train Epoch: 57 [2560/7000 (37%)]	Loss: 2.117883
+Train Epoch: 57 [3840/7000 (56%)]	Loss: 2.088946
+Train Epoch: 57 [5120/7000 (74%)]	Loss: 1.964012
+Train Epoch: 57 [6400/7000 (93%)]	Loss: 2.006317
+
+Train set: Average loss: 2.0891
+Validation set: Average loss: 2.0439, Accuracy: 454/2000 (23%)
+
+Epoch time: 7.1487 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 58 [0/7000 (0%)]	Loss: 2.273718
+Train Epoch: 58 [1280/7000 (19%)]	Loss: 2.049968
+Train Epoch: 58 [2560/7000 (37%)]	Loss: 2.076128
+Train Epoch: 58 [3840/7000 (56%)]	Loss: 2.077104
+Train Epoch: 58 [5120/7000 (74%)]	Loss: 2.030254
+Train Epoch: 58 [6400/7000 (93%)]	Loss: 2.094411
+
+Train set: Average loss: 2.0822
+Validation set: Average loss: 2.0456, Accuracy: 461/2000 (23%)
+
+Epoch time: 7.1419 seconds
+Train Epoch: 59 [0/7000 (0%)]	Loss: 2.058226
+Train Epoch: 59 [1280/7000 (19%)]	Loss: 2.043842
+Train Epoch: 59 [2560/7000 (37%)]	Loss: 2.010280
+Train Epoch: 59 [3840/7000 (56%)]	Loss: 2.022933
+Train Epoch: 59 [5120/7000 (74%)]	Loss: 2.056076
+Train Epoch: 59 [6400/7000 (93%)]	Loss: 2.083460
+
+Train set: Average loss: 2.0775
+Validation set: Average loss: 2.0407, Accuracy: 472/2000 (24%)
+
+Epoch time: 7.1818 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 60 [0/7000 (0%)]	Loss: 2.179201
+Train Epoch: 60 [1280/7000 (19%)]	Loss: 2.026884
+Train Epoch: 60 [2560/7000 (37%)]	Loss: 2.076859
+Train Epoch: 60 [3840/7000 (56%)]	Loss: 2.122730
+Train Epoch: 60 [5120/7000 (74%)]	Loss: 1.921820
+Train Epoch: 60 [6400/7000 (93%)]	Loss: 2.070257
+
+Train set: Average loss: 2.0755
+Validation set: Average loss: 2.0631, Accuracy: 423/2000 (21%)
+
+Epoch time: 7.1776 seconds
+Train Epoch: 61 [0/7000 (0%)]	Loss: 2.082529
+Train Epoch: 61 [1280/7000 (19%)]	Loss: 2.033384
+Train Epoch: 61 [2560/7000 (37%)]	Loss: 2.108230
+Train Epoch: 61 [3840/7000 (56%)]	Loss: 2.053011
+Train Epoch: 61 [5120/7000 (74%)]	Loss: 2.063452
+Train Epoch: 61 [6400/7000 (93%)]	Loss: 1.964072
+
+Train set: Average loss: 2.0620
+Validation set: Average loss: 2.0713, Accuracy: 427/2000 (21%)
+
+Epoch time: 7.1916 seconds
+Train Epoch: 62 [0/7000 (0%)]	Loss: 2.106964
+Train Epoch: 62 [1280/7000 (19%)]	Loss: 2.091712
+Train Epoch: 62 [2560/7000 (37%)]	Loss: 2.098463
+Train Epoch: 62 [3840/7000 (56%)]	Loss: 2.152308
+Train Epoch: 62 [5120/7000 (74%)]	Loss: 2.043584
+Train Epoch: 62 [6400/7000 (93%)]	Loss: 2.091157
+
+Train set: Average loss: 2.0726
+Validation set: Average loss: 2.0356, Accuracy: 485/2000 (24%)
+
+Epoch time: 7.1829 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 63 [0/7000 (0%)]	Loss: 2.000129
+Train Epoch: 63 [1280/7000 (19%)]	Loss: 2.066675
+Train Epoch: 63 [2560/7000 (37%)]	Loss: 2.068200
+Train Epoch: 63 [3840/7000 (56%)]	Loss: 1.983827
+Train Epoch: 63 [5120/7000 (74%)]	Loss: 2.010188
+Train Epoch: 63 [6400/7000 (93%)]	Loss: 1.999989
+
+Train set: Average loss: 2.0547
+Validation set: Average loss: 2.0234, Accuracy: 477/2000 (24%)
+
+Epoch time: 7.1899 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 64 [0/7000 (0%)]	Loss: 1.982148
+Train Epoch: 64 [1280/7000 (19%)]	Loss: 2.071520
+Train Epoch: 64 [2560/7000 (37%)]	Loss: 1.944892
+Train Epoch: 64 [3840/7000 (56%)]	Loss: 1.982449
+Train Epoch: 64 [5120/7000 (74%)]	Loss: 2.048310
+Train Epoch: 64 [6400/7000 (93%)]	Loss: 2.087412
+
+Train set: Average loss: 2.0537
+Validation set: Average loss: 2.0329, Accuracy: 474/2000 (24%)
+
+Epoch time: 7.1627 seconds
+Train Epoch: 65 [0/7000 (0%)]	Loss: 2.001684
+Train Epoch: 65 [1280/7000 (19%)]	Loss: 1.985207
+Train Epoch: 65 [2560/7000 (37%)]	Loss: 2.201995
+Train Epoch: 65 [3840/7000 (56%)]	Loss: 2.055922
+Train Epoch: 65 [5120/7000 (74%)]	Loss: 2.100721
+Train Epoch: 65 [6400/7000 (93%)]	Loss: 1.965546
+
+Train set: Average loss: 2.0555
+Validation set: Average loss: 2.0025, Accuracy: 493/2000 (25%)
+
+Epoch time: 7.1832 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 66 [0/7000 (0%)]	Loss: 2.109076
+Train Epoch: 66 [1280/7000 (19%)]	Loss: 1.965540
+Train Epoch: 66 [2560/7000 (37%)]	Loss: 2.010605
+Train Epoch: 66 [3840/7000 (56%)]	Loss: 1.971259
+Train Epoch: 66 [5120/7000 (74%)]	Loss: 1.988834
+Train Epoch: 66 [6400/7000 (93%)]	Loss: 2.091179
+
+Train set: Average loss: 2.0450
+Validation set: Average loss: 2.0444, Accuracy: 473/2000 (24%)
+
+Epoch time: 7.1916 seconds
+Train Epoch: 67 [0/7000 (0%)]	Loss: 1.970567
+Train Epoch: 67 [1280/7000 (19%)]	Loss: 2.048045
+Train Epoch: 67 [2560/7000 (37%)]	Loss: 2.077583
+Train Epoch: 67 [3840/7000 (56%)]	Loss: 2.119324
+Train Epoch: 67 [5120/7000 (74%)]	Loss: 2.081641
+Train Epoch: 67 [6400/7000 (93%)]	Loss: 2.070499
+
+Train set: Average loss: 2.0452
+Validation set: Average loss: 2.0246, Accuracy: 454/2000 (23%)
+
+Epoch time: 7.1816 seconds
+Train Epoch: 68 [0/7000 (0%)]	Loss: 1.946639
+Train Epoch: 68 [1280/7000 (19%)]	Loss: 2.034891
+Train Epoch: 68 [2560/7000 (37%)]	Loss: 1.982346
+Train Epoch: 68 [3840/7000 (56%)]	Loss: 2.112710
+Train Epoch: 68 [5120/7000 (74%)]	Loss: 2.049222
+Train Epoch: 68 [6400/7000 (93%)]	Loss: 2.015979
+
+Train set: Average loss: 2.0438
+Validation set: Average loss: 2.0210, Accuracy: 508/2000 (25%)
+
+Epoch time: 7.1833 seconds
+Train Epoch: 69 [0/7000 (0%)]	Loss: 2.009360
+Train Epoch: 69 [1280/7000 (19%)]	Loss: 1.903594
+Train Epoch: 69 [2560/7000 (37%)]	Loss: 2.126382
+Train Epoch: 69 [3840/7000 (56%)]	Loss: 2.018744
+Train Epoch: 69 [5120/7000 (74%)]	Loss: 2.049719
+Train Epoch: 69 [6400/7000 (93%)]	Loss: 2.042179
+
+Train set: Average loss: 2.0415
+Validation set: Average loss: 2.0227, Accuracy: 499/2000 (25%)
+
+Epoch time: 7.1618 seconds
+Train Epoch: 70 [0/7000 (0%)]	Loss: 1.986879
+Train Epoch: 70 [1280/7000 (19%)]	Loss: 1.948918
+Train Epoch: 70 [2560/7000 (37%)]	Loss: 2.041969
+Train Epoch: 70 [3840/7000 (56%)]	Loss: 1.976888
+Train Epoch: 70 [5120/7000 (74%)]	Loss: 2.027888
+Train Epoch: 70 [6400/7000 (93%)]	Loss: 2.002740
+
+Train set: Average loss: 2.0310
+Validation set: Average loss: 2.0184, Accuracy: 495/2000 (25%)
+
+Epoch time: 7.1984 seconds
+Train Epoch: 71 [0/7000 (0%)]	Loss: 1.985577
+Train Epoch: 71 [1280/7000 (19%)]	Loss: 2.071606
+Train Epoch: 71 [2560/7000 (37%)]	Loss: 1.931754
+Train Epoch: 71 [3840/7000 (56%)]	Loss: 2.021616
+Train Epoch: 71 [5120/7000 (74%)]	Loss: 2.040403
+Train Epoch: 71 [6400/7000 (93%)]	Loss: 1.947152
+
+Train set: Average loss: 2.0417
+Validation set: Average loss: 2.0177, Accuracy: 498/2000 (25%)
+
+Epoch time: 7.1999 seconds
+Train Epoch: 72 [0/7000 (0%)]	Loss: 1.999233
+Train Epoch: 72 [1280/7000 (19%)]	Loss: 2.087102
+Train Epoch: 72 [2560/7000 (37%)]	Loss: 2.232773
+Train Epoch: 72 [3840/7000 (56%)]	Loss: 2.106550
+Train Epoch: 72 [5120/7000 (74%)]	Loss: 1.978995
+Train Epoch: 72 [6400/7000 (93%)]	Loss: 2.005179
+
+Train set: Average loss: 2.0335
+Validation set: Average loss: 1.9958, Accuracy: 512/2000 (26%)
+
+Epoch time: 7.1691 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 73 [0/7000 (0%)]	Loss: 1.923332
+Train Epoch: 73 [1280/7000 (19%)]	Loss: 1.940494
+Train Epoch: 73 [2560/7000 (37%)]	Loss: 1.885166
+Train Epoch: 73 [3840/7000 (56%)]	Loss: 2.041848
+Train Epoch: 73 [5120/7000 (74%)]	Loss: 2.001529
+Train Epoch: 73 [6400/7000 (93%)]	Loss: 1.961726
+
+Train set: Average loss: 2.0316
+Validation set: Average loss: 2.0110, Accuracy: 495/2000 (25%)
+
+Epoch time: 7.1846 seconds
+Train Epoch: 74 [0/7000 (0%)]	Loss: 2.020883
+Train Epoch: 74 [1280/7000 (19%)]	Loss: 1.956599
+Train Epoch: 74 [2560/7000 (37%)]	Loss: 2.003617
+Train Epoch: 74 [3840/7000 (56%)]	Loss: 2.095767
+Train Epoch: 74 [5120/7000 (74%)]	Loss: 1.956488
+Train Epoch: 74 [6400/7000 (93%)]	Loss: 2.001924
+
+Train set: Average loss: 2.0358
+Validation set: Average loss: 2.0094, Accuracy: 484/2000 (24%)
+
+Epoch time: 7.1822 seconds
+Train Epoch: 75 [0/7000 (0%)]	Loss: 2.042043
+Train Epoch: 75 [1280/7000 (19%)]	Loss: 2.031012
+Train Epoch: 75 [2560/7000 (37%)]	Loss: 1.970464
+Train Epoch: 75 [3840/7000 (56%)]	Loss: 1.931659
+Train Epoch: 75 [5120/7000 (74%)]	Loss: 1.958425
+Train Epoch: 75 [6400/7000 (93%)]	Loss: 2.080044
+
+Train set: Average loss: 2.0063
+Validation set: Average loss: 2.0029, Accuracy: 527/2000 (26%)
+
+Epoch time: 7.1752 seconds
+Train Epoch: 76 [0/7000 (0%)]	Loss: 2.115036
+Train Epoch: 76 [1280/7000 (19%)]	Loss: 2.041778
+Train Epoch: 76 [2560/7000 (37%)]	Loss: 2.068688
+Train Epoch: 76 [3840/7000 (56%)]	Loss: 2.054836
+Train Epoch: 76 [5120/7000 (74%)]	Loss: 1.981165
+Train Epoch: 76 [6400/7000 (93%)]	Loss: 2.042129
+
+Train set: Average loss: 2.0432
+Validation set: Average loss: 1.9973, Accuracy: 531/2000 (27%)
+
+Epoch time: 7.1836 seconds
+Train Epoch: 77 [0/7000 (0%)]	Loss: 2.054591
+Train Epoch: 77 [1280/7000 (19%)]	Loss: 2.117533
+Train Epoch: 77 [2560/7000 (37%)]	Loss: 2.087442
+Train Epoch: 77 [3840/7000 (56%)]	Loss: 1.925184
+Train Epoch: 77 [5120/7000 (74%)]	Loss: 2.113777
+Train Epoch: 77 [6400/7000 (93%)]	Loss: 1.937457
+
+Train set: Average loss: 2.0270
+Validation set: Average loss: 1.9929, Accuracy: 512/2000 (26%)
+
+Epoch time: 7.1604 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 78 [0/7000 (0%)]	Loss: 2.030493
+Train Epoch: 78 [1280/7000 (19%)]	Loss: 2.033487
+Train Epoch: 78 [2560/7000 (37%)]	Loss: 2.039263
+Train Epoch: 78 [3840/7000 (56%)]	Loss: 2.098368
+Train Epoch: 78 [5120/7000 (74%)]	Loss: 2.013347
+Train Epoch: 78 [6400/7000 (93%)]	Loss: 1.941717
+
+Train set: Average loss: 2.0140
+Validation set: Average loss: 2.0216, Accuracy: 483/2000 (24%)
+
+Epoch time: 7.1575 seconds
+Train Epoch: 79 [0/7000 (0%)]	Loss: 2.091103
+Train Epoch: 79 [1280/7000 (19%)]	Loss: 1.934248
+Train Epoch: 79 [2560/7000 (37%)]	Loss: 2.000539
+Train Epoch: 79 [3840/7000 (56%)]	Loss: 1.985016
+Train Epoch: 79 [5120/7000 (74%)]	Loss: 2.152907
+Train Epoch: 79 [6400/7000 (93%)]	Loss: 2.006315
+
+Train set: Average loss: 2.0074
+Validation set: Average loss: 1.9919, Accuracy: 523/2000 (26%)
+
+Epoch time: 7.1591 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 80 [0/7000 (0%)]	Loss: 1.925816
+Train Epoch: 80 [1280/7000 (19%)]	Loss: 2.052778
+Train Epoch: 80 [2560/7000 (37%)]	Loss: 1.999380
+Train Epoch: 80 [3840/7000 (56%)]	Loss: 2.031543
+Train Epoch: 80 [5120/7000 (74%)]	Loss: 2.053952
+Train Epoch: 80 [6400/7000 (93%)]	Loss: 1.950848
+
+Train set: Average loss: 2.0020
+Validation set: Average loss: 1.9842, Accuracy: 522/2000 (26%)
+
+Epoch time: 7.2290 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 81 [0/7000 (0%)]	Loss: 1.946534
+Train Epoch: 81 [1280/7000 (19%)]	Loss: 2.029847
+Train Epoch: 81 [2560/7000 (37%)]	Loss: 1.966538
+Train Epoch: 81 [3840/7000 (56%)]	Loss: 2.044418
+Train Epoch: 81 [5120/7000 (74%)]	Loss: 1.906707
+Train Epoch: 81 [6400/7000 (93%)]	Loss: 2.004409
+
+Train set: Average loss: 1.9976
+Validation set: Average loss: 1.9985, Accuracy: 514/2000 (26%)
+
+Epoch time: 7.1536 seconds
+Train Epoch: 82 [0/7000 (0%)]	Loss: 1.988839
+Train Epoch: 82 [1280/7000 (19%)]	Loss: 1.980440
+Train Epoch: 82 [2560/7000 (37%)]	Loss: 2.120396
+Train Epoch: 82 [3840/7000 (56%)]	Loss: 1.948918
+Train Epoch: 82 [5120/7000 (74%)]	Loss: 2.065704
+Train Epoch: 82 [6400/7000 (93%)]	Loss: 2.078682
+
+Train set: Average loss: 1.9846
+Validation set: Average loss: 1.9829, Accuracy: 519/2000 (26%)
+
+Epoch time: 7.1712 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 83 [0/7000 (0%)]	Loss: 2.155995
+Train Epoch: 83 [1280/7000 (19%)]	Loss: 1.929848
+Train Epoch: 83 [2560/7000 (37%)]	Loss: 1.857336
+Train Epoch: 83 [3840/7000 (56%)]	Loss: 1.983511
+Train Epoch: 83 [5120/7000 (74%)]	Loss: 2.018566
+Train Epoch: 83 [6400/7000 (93%)]	Loss: 1.950197
+
+Train set: Average loss: 2.0114
+Validation set: Average loss: 2.0047, Accuracy: 525/2000 (26%)
+
+Epoch time: 7.1487 seconds
+Train Epoch: 84 [0/7000 (0%)]	Loss: 1.890309
+Train Epoch: 84 [1280/7000 (19%)]	Loss: 1.811844
+Train Epoch: 84 [2560/7000 (37%)]	Loss: 1.996330
+Train Epoch: 84 [3840/7000 (56%)]	Loss: 1.940216
+Train Epoch: 84 [5120/7000 (74%)]	Loss: 2.036471
+Train Epoch: 84 [6400/7000 (93%)]	Loss: 2.128160
+
+Train set: Average loss: 1.9940
+Validation set: Average loss: 1.9827, Accuracy: 530/2000 (26%)
+
+Epoch time: 7.1604 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 85 [0/7000 (0%)]	Loss: 1.978902
+Train Epoch: 85 [1280/7000 (19%)]	Loss: 1.997534
+Train Epoch: 85 [2560/7000 (37%)]	Loss: 1.993698
+Train Epoch: 85 [3840/7000 (56%)]	Loss: 1.895835
+Train Epoch: 85 [5120/7000 (74%)]	Loss: 1.918338
+Train Epoch: 85 [6400/7000 (93%)]	Loss: 2.022338
+
+Train set: Average loss: 1.9829
+Validation set: Average loss: 2.0017, Accuracy: 501/2000 (25%)
+
+Epoch time: 7.1471 seconds
+Train Epoch: 86 [0/7000 (0%)]	Loss: 1.953555
+Train Epoch: 86 [1280/7000 (19%)]	Loss: 1.903957
+Train Epoch: 86 [2560/7000 (37%)]	Loss: 1.951062
+Train Epoch: 86 [3840/7000 (56%)]	Loss: 2.043381
+Train Epoch: 86 [5120/7000 (74%)]	Loss: 2.015931
+Train Epoch: 86 [6400/7000 (93%)]	Loss: 2.052170
+
+Train set: Average loss: 1.9808
+Validation set: Average loss: 1.9735, Accuracy: 534/2000 (27%)
+
+Epoch time: 7.1814 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 87 [0/7000 (0%)]	Loss: 1.935537
+Train Epoch: 87 [1280/7000 (19%)]	Loss: 2.054263
+Train Epoch: 87 [2560/7000 (37%)]	Loss: 1.941375
+Train Epoch: 87 [3840/7000 (56%)]	Loss: 2.047205
+Train Epoch: 87 [5120/7000 (74%)]	Loss: 1.990592
+Train Epoch: 87 [6400/7000 (93%)]	Loss: 2.024379
+
+Train set: Average loss: 1.9867
+Validation set: Average loss: 1.9480, Accuracy: 543/2000 (27%)
+
+Epoch time: 7.1811 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 88 [0/7000 (0%)]	Loss: 1.822238
+Train Epoch: 88 [1280/7000 (19%)]	Loss: 2.081494
+Train Epoch: 88 [2560/7000 (37%)]	Loss: 2.163021
+Train Epoch: 88 [3840/7000 (56%)]	Loss: 2.197715
+Train Epoch: 88 [5120/7000 (74%)]	Loss: 2.065044
+Train Epoch: 88 [6400/7000 (93%)]	Loss: 1.940158
+
+Train set: Average loss: 1.9813
+Validation set: Average loss: 1.9406, Accuracy: 566/2000 (28%)
+
+Epoch time: 7.1707 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 89 [0/7000 (0%)]	Loss: 2.040400
+Train Epoch: 89 [1280/7000 (19%)]	Loss: 2.017683
+Train Epoch: 89 [2560/7000 (37%)]	Loss: 1.961579
+Train Epoch: 89 [3840/7000 (56%)]	Loss: 2.069195
+Train Epoch: 89 [5120/7000 (74%)]	Loss: 2.006655
+Train Epoch: 89 [6400/7000 (93%)]	Loss: 1.967492
+
+Train set: Average loss: 1.9644
+Validation set: Average loss: 1.9636, Accuracy: 557/2000 (28%)
+
+Epoch time: 7.1817 seconds
+Train Epoch: 90 [0/7000 (0%)]	Loss: 1.870845
+Train Epoch: 90 [1280/7000 (19%)]	Loss: 2.023469
+Train Epoch: 90 [2560/7000 (37%)]	Loss: 1.871966
+Train Epoch: 90 [3840/7000 (56%)]	Loss: 1.957843
+Train Epoch: 90 [5120/7000 (74%)]	Loss: 1.888789
+Train Epoch: 90 [6400/7000 (93%)]	Loss: 1.982362
+
+Train set: Average loss: 1.9695
+Validation set: Average loss: 1.9654, Accuracy: 540/2000 (27%)
+
+Epoch time: 7.1622 seconds
+Train Epoch: 91 [0/7000 (0%)]	Loss: 2.132793
+Train Epoch: 91 [1280/7000 (19%)]	Loss: 1.902466
+Train Epoch: 91 [2560/7000 (37%)]	Loss: 1.917788
+Train Epoch: 91 [3840/7000 (56%)]	Loss: 1.968271
+Train Epoch: 91 [5120/7000 (74%)]	Loss: 2.135234
+Train Epoch: 91 [6400/7000 (93%)]	Loss: 2.060490
+
+Train set: Average loss: 1.9698
+Validation set: Average loss: 1.9704, Accuracy: 524/2000 (26%)
+
+Epoch time: 7.1765 seconds
+Train Epoch: 92 [0/7000 (0%)]	Loss: 1.848942
+Train Epoch: 92 [1280/7000 (19%)]	Loss: 2.004320
+Train Epoch: 92 [2560/7000 (37%)]	Loss: 1.923166
+Train Epoch: 92 [3840/7000 (56%)]	Loss: 1.862732
+Train Epoch: 92 [5120/7000 (74%)]	Loss: 1.857602
+Train Epoch: 92 [6400/7000 (93%)]	Loss: 2.102595
+
+Train set: Average loss: 1.9505
+Validation set: Average loss: 1.9509, Accuracy: 560/2000 (28%)
+
+Epoch time: 7.1443 seconds
+Train Epoch: 93 [0/7000 (0%)]	Loss: 2.057998
+Train Epoch: 93 [1280/7000 (19%)]	Loss: 1.921019
+Train Epoch: 93 [2560/7000 (37%)]	Loss: 1.933121
+Train Epoch: 93 [3840/7000 (56%)]	Loss: 2.072892
+Train Epoch: 93 [5120/7000 (74%)]	Loss: 1.990523
+Train Epoch: 93 [6400/7000 (93%)]	Loss: 1.937605
+
+Train set: Average loss: 1.9547
+Validation set: Average loss: 1.9522, Accuracy: 560/2000 (28%)
+
+Epoch time: 7.1679 seconds
+Train Epoch: 94 [0/7000 (0%)]	Loss: 1.843365
+Train Epoch: 94 [1280/7000 (19%)]	Loss: 2.001047
+Train Epoch: 94 [2560/7000 (37%)]	Loss: 1.999734
+Train Epoch: 94 [3840/7000 (56%)]	Loss: 1.786980
+Train Epoch: 94 [5120/7000 (74%)]	Loss: 2.001137
+Train Epoch: 94 [6400/7000 (93%)]	Loss: 1.974187
+
+Train set: Average loss: 1.9523
+Validation set: Average loss: 1.9342, Accuracy: 560/2000 (28%)
+
+Epoch time: 7.1800 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 95 [0/7000 (0%)]	Loss: 1.694908
+Train Epoch: 95 [1280/7000 (19%)]	Loss: 1.925229
+Train Epoch: 95 [2560/7000 (37%)]	Loss: 1.881254
+Train Epoch: 95 [3840/7000 (56%)]	Loss: 2.023205
+Train Epoch: 95 [5120/7000 (74%)]	Loss: 1.891178
+Train Epoch: 95 [6400/7000 (93%)]	Loss: 1.906226
+
+Train set: Average loss: 1.9152
+Validation set: Average loss: 1.9102, Accuracy: 566/2000 (28%)
+
+Epoch time: 7.1634 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 96 [0/7000 (0%)]	Loss: 1.943147
+Train Epoch: 96 [1280/7000 (19%)]	Loss: 1.929499
+Train Epoch: 96 [2560/7000 (37%)]	Loss: 2.042772
+Train Epoch: 96 [3840/7000 (56%)]	Loss: 1.950113
+Train Epoch: 96 [5120/7000 (74%)]	Loss: 2.057562
+Train Epoch: 96 [6400/7000 (93%)]	Loss: 2.090751
+
+Train set: Average loss: 1.9347
+Validation set: Average loss: 1.9285, Accuracy: 554/2000 (28%)
+
+Epoch time: 7.1788 seconds
+Train Epoch: 97 [0/7000 (0%)]	Loss: 2.026521
+Train Epoch: 97 [1280/7000 (19%)]	Loss: 1.964334
+Train Epoch: 97 [2560/7000 (37%)]	Loss: 1.966567
+Train Epoch: 97 [3840/7000 (56%)]	Loss: 1.927671
+Train Epoch: 97 [5120/7000 (74%)]	Loss: 1.961390
+Train Epoch: 97 [6400/7000 (93%)]	Loss: 1.980315
+
+Train set: Average loss: 1.9167
+Validation set: Average loss: 1.9068, Accuracy: 550/2000 (28%)
+
+Epoch time: 7.1719 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 98 [0/7000 (0%)]	Loss: 1.779029
+Train Epoch: 98 [1280/7000 (19%)]	Loss: 2.026242
+Train Epoch: 98 [2560/7000 (37%)]	Loss: 1.959971
+Train Epoch: 98 [3840/7000 (56%)]	Loss: 1.875111
+Train Epoch: 98 [5120/7000 (74%)]	Loss: 2.094824
+Train Epoch: 98 [6400/7000 (93%)]	Loss: 2.042142
+
+Train set: Average loss: 1.9318
+Validation set: Average loss: 1.9111, Accuracy: 544/2000 (27%)
+
+Epoch time: 7.1462 seconds
+Train Epoch: 99 [0/7000 (0%)]	Loss: 1.890183
+Train Epoch: 99 [1280/7000 (19%)]	Loss: 2.022994
+Train Epoch: 99 [2560/7000 (37%)]	Loss: 1.847991
+Train Epoch: 99 [3840/7000 (56%)]	Loss: 1.906307
+Train Epoch: 99 [5120/7000 (74%)]	Loss: 1.906945
+Train Epoch: 99 [6400/7000 (93%)]	Loss: 1.886524
+
+Train set: Average loss: 1.9226
+Validation set: Average loss: 1.9004, Accuracy: 561/2000 (28%)
+
+Epoch time: 7.1516 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 100 [0/7000 (0%)]	Loss: 1.864419
+Train Epoch: 100 [1280/7000 (19%)]	Loss: 1.933188
+Train Epoch: 100 [2560/7000 (37%)]	Loss: 1.921535
+Train Epoch: 100 [3840/7000 (56%)]	Loss: 1.942513
+Train Epoch: 100 [5120/7000 (74%)]	Loss: 1.864824
+Train Epoch: 100 [6400/7000 (93%)]	Loss: 1.888799
+
+Train set: Average loss: 1.9089
+Validation set: Average loss: 1.9163, Accuracy: 551/2000 (28%)
+
+Epoch time: 7.1841 seconds
+Train Epoch: 101 [0/7000 (0%)]	Loss: 1.905454
+Train Epoch: 101 [1280/7000 (19%)]	Loss: 1.959489
+Train Epoch: 101 [2560/7000 (37%)]	Loss: 1.940493
+Train Epoch: 101 [3840/7000 (56%)]	Loss: 1.927374
+Train Epoch: 101 [5120/7000 (74%)]	Loss: 2.029283
+Train Epoch: 101 [6400/7000 (93%)]	Loss: 1.951239
+
+Train set: Average loss: 1.9142
+Validation set: Average loss: 1.8963, Accuracy: 550/2000 (28%)
+
+Epoch time: 7.1661 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 102 [0/7000 (0%)]	Loss: 1.927784
+Train Epoch: 102 [1280/7000 (19%)]	Loss: 1.833356
+Train Epoch: 102 [2560/7000 (37%)]	Loss: 1.883803
+Train Epoch: 102 [3840/7000 (56%)]	Loss: 1.862530
+Train Epoch: 102 [5120/7000 (74%)]	Loss: 1.872946
+Train Epoch: 102 [6400/7000 (93%)]	Loss: 1.855488
+
+Train set: Average loss: 1.9265
+Validation set: Average loss: 1.9399, Accuracy: 551/2000 (28%)
+
+Epoch time: 7.1946 seconds
+Train Epoch: 103 [0/7000 (0%)]	Loss: 2.087646
+Train Epoch: 103 [1280/7000 (19%)]	Loss: 1.933566
+Train Epoch: 103 [2560/7000 (37%)]	Loss: 1.800634
+Train Epoch: 103 [3840/7000 (56%)]	Loss: 1.932209
+Train Epoch: 103 [5120/7000 (74%)]	Loss: 1.886612
+Train Epoch: 103 [6400/7000 (93%)]	Loss: 1.990319
+
+Train set: Average loss: 1.9227
+Validation set: Average loss: 1.9022, Accuracy: 581/2000 (29%)
+
+Epoch time: 7.1921 seconds
+Train Epoch: 104 [0/7000 (0%)]	Loss: 1.810382
+Train Epoch: 104 [1280/7000 (19%)]	Loss: 1.882724
+Train Epoch: 104 [2560/7000 (37%)]	Loss: 1.934139
+Train Epoch: 104 [3840/7000 (56%)]	Loss: 1.855514
+Train Epoch: 104 [5120/7000 (74%)]	Loss: 1.867677
+Train Epoch: 104 [6400/7000 (93%)]	Loss: 1.866975
+
+Train set: Average loss: 1.8926
+Validation set: Average loss: 1.9122, Accuracy: 547/2000 (27%)
+
+Epoch time: 7.1749 seconds
+Train Epoch: 105 [0/7000 (0%)]	Loss: 1.870145
+Train Epoch: 105 [1280/7000 (19%)]	Loss: 1.804929
+Train Epoch: 105 [2560/7000 (37%)]	Loss: 2.013041
+Train Epoch: 105 [3840/7000 (56%)]	Loss: 1.876652
+Train Epoch: 105 [5120/7000 (74%)]	Loss: 1.931478
+Train Epoch: 105 [6400/7000 (93%)]	Loss: 1.865104
+
+Train set: Average loss: 1.9091
+Validation set: Average loss: 1.9192, Accuracy: 564/2000 (28%)
+
+Epoch time: 7.1680 seconds
+Train Epoch: 106 [0/7000 (0%)]	Loss: 1.937681
+Train Epoch: 106 [1280/7000 (19%)]	Loss: 1.842634
+Train Epoch: 106 [2560/7000 (37%)]	Loss: 1.975796
+Train Epoch: 106 [3840/7000 (56%)]	Loss: 1.954206
+Train Epoch: 106 [5120/7000 (74%)]	Loss: 1.855243
+Train Epoch: 106 [6400/7000 (93%)]	Loss: 1.895195
+
+Train set: Average loss: 1.9117
+Validation set: Average loss: 1.8953, Accuracy: 567/2000 (28%)
+
+Epoch time: 7.1476 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 107 [0/7000 (0%)]	Loss: 1.768119
+Train Epoch: 107 [1280/7000 (19%)]	Loss: 1.785220
+Train Epoch: 107 [2560/7000 (37%)]	Loss: 1.845448
+Train Epoch: 107 [3840/7000 (56%)]	Loss: 1.818815
+Train Epoch: 107 [5120/7000 (74%)]	Loss: 1.936266
+Train Epoch: 107 [6400/7000 (93%)]	Loss: 1.805192
+
+Train set: Average loss: 1.8848
+Validation set: Average loss: 1.8808, Accuracy: 573/2000 (29%)
+
+Epoch time: 7.1868 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 108 [0/7000 (0%)]	Loss: 2.052263
+Train Epoch: 108 [1280/7000 (19%)]	Loss: 1.935452
+Train Epoch: 108 [2560/7000 (37%)]	Loss: 1.728285
+Train Epoch: 108 [3840/7000 (56%)]	Loss: 1.970175
+Train Epoch: 108 [5120/7000 (74%)]	Loss: 1.979883
+Train Epoch: 108 [6400/7000 (93%)]	Loss: 1.909900
+
+Train set: Average loss: 1.8888
+Validation set: Average loss: 1.8913, Accuracy: 577/2000 (29%)
+
+Epoch time: 7.1919 seconds
+Train Epoch: 109 [0/7000 (0%)]	Loss: 1.799584
+Train Epoch: 109 [1280/7000 (19%)]	Loss: 1.815673
+Train Epoch: 109 [2560/7000 (37%)]	Loss: 1.996293
+Train Epoch: 109 [3840/7000 (56%)]	Loss: 1.845867
+Train Epoch: 109 [5120/7000 (74%)]	Loss: 1.856298
+Train Epoch: 109 [6400/7000 (93%)]	Loss: 1.877061
+
+Train set: Average loss: 1.8710
+Validation set: Average loss: 1.8767, Accuracy: 594/2000 (30%)
+
+Epoch time: 7.2001 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 110 [0/7000 (0%)]	Loss: 1.804749
+Train Epoch: 110 [1280/7000 (19%)]	Loss: 1.953149
+Train Epoch: 110 [2560/7000 (37%)]	Loss: 1.800007
+Train Epoch: 110 [3840/7000 (56%)]	Loss: 1.764206
+Train Epoch: 110 [5120/7000 (74%)]	Loss: 2.081457
+Train Epoch: 110 [6400/7000 (93%)]	Loss: 1.890375
+
+Train set: Average loss: 1.8779
+Validation set: Average loss: 1.8891, Accuracy: 585/2000 (29%)
+
+Epoch time: 7.1844 seconds
+Train Epoch: 111 [0/7000 (0%)]	Loss: 1.835427
+Train Epoch: 111 [1280/7000 (19%)]	Loss: 1.787816
+Train Epoch: 111 [2560/7000 (37%)]	Loss: 1.919855
+Train Epoch: 111 [3840/7000 (56%)]	Loss: 1.760836
+Train Epoch: 111 [5120/7000 (74%)]	Loss: 1.710469
+Train Epoch: 111 [6400/7000 (93%)]	Loss: 1.813096
+
+Train set: Average loss: 1.8664
+Validation set: Average loss: 1.8569, Accuracy: 577/2000 (29%)
+
+Epoch time: 7.1762 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 112 [0/7000 (0%)]	Loss: 1.877784
+Train Epoch: 112 [1280/7000 (19%)]	Loss: 1.798571
+Train Epoch: 112 [2560/7000 (37%)]	Loss: 1.886747
+Train Epoch: 112 [3840/7000 (56%)]	Loss: 1.869057
+Train Epoch: 112 [5120/7000 (74%)]	Loss: 1.823736
+Train Epoch: 112 [6400/7000 (93%)]	Loss: 1.829705
+
+Train set: Average loss: 1.8466
+Validation set: Average loss: 1.8522, Accuracy: 596/2000 (30%)
+
+Epoch time: 7.1879 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 113 [0/7000 (0%)]	Loss: 1.904517
+Train Epoch: 113 [1280/7000 (19%)]	Loss: 1.762623
+Train Epoch: 113 [2560/7000 (37%)]	Loss: 1.861608
+Train Epoch: 113 [3840/7000 (56%)]	Loss: 1.867892
+Train Epoch: 113 [5120/7000 (74%)]	Loss: 1.981718
+Train Epoch: 113 [6400/7000 (93%)]	Loss: 1.795529
+
+Train set: Average loss: 1.8569
+Validation set: Average loss: 1.8388, Accuracy: 611/2000 (31%)
+
+Epoch time: 7.1457 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 114 [0/7000 (0%)]	Loss: 1.859214
+Train Epoch: 114 [1280/7000 (19%)]	Loss: 1.824796
+Train Epoch: 114 [2560/7000 (37%)]	Loss: 1.849419
+Train Epoch: 114 [3840/7000 (56%)]	Loss: 1.809163
+Train Epoch: 114 [5120/7000 (74%)]	Loss: 1.789162
+Train Epoch: 114 [6400/7000 (93%)]	Loss: 2.024587
+
+Train set: Average loss: 1.8713
+Validation set: Average loss: 1.8640, Accuracy: 589/2000 (29%)
+
+Epoch time: 7.1737 seconds
+Train Epoch: 115 [0/7000 (0%)]	Loss: 1.893725
+Train Epoch: 115 [1280/7000 (19%)]	Loss: 1.715510
+Train Epoch: 115 [2560/7000 (37%)]	Loss: 1.841245
+Train Epoch: 115 [3840/7000 (56%)]	Loss: 1.814688
+Train Epoch: 115 [5120/7000 (74%)]	Loss: 1.951422
+Train Epoch: 115 [6400/7000 (93%)]	Loss: 1.957925
+
+Train set: Average loss: 1.8674
+Validation set: Average loss: 1.8846, Accuracy: 575/2000 (29%)
+
+Epoch time: 7.1674 seconds
+Train Epoch: 116 [0/7000 (0%)]	Loss: 1.828104
+Train Epoch: 116 [1280/7000 (19%)]	Loss: 1.770902
+Train Epoch: 116 [2560/7000 (37%)]	Loss: 1.838041
+Train Epoch: 116 [3840/7000 (56%)]	Loss: 1.934316
+Train Epoch: 116 [5120/7000 (74%)]	Loss: 1.772975
+Train Epoch: 116 [6400/7000 (93%)]	Loss: 2.043176
+
+Train set: Average loss: 1.8480
+Validation set: Average loss: 1.8390, Accuracy: 569/2000 (28%)
+
+Epoch time: 7.1787 seconds
+Train Epoch: 117 [0/7000 (0%)]	Loss: 1.647164
+Train Epoch: 117 [1280/7000 (19%)]	Loss: 1.936653
+Train Epoch: 117 [2560/7000 (37%)]	Loss: 1.877615
+Train Epoch: 117 [3840/7000 (56%)]	Loss: 1.814158
+Train Epoch: 117 [5120/7000 (74%)]	Loss: 1.961757
+Train Epoch: 117 [6400/7000 (93%)]	Loss: 1.826502
+
+Train set: Average loss: 1.8574
+Validation set: Average loss: 1.8628, Accuracy: 580/2000 (29%)
+
+Epoch time: 7.2046 seconds
+Train Epoch: 118 [0/7000 (0%)]	Loss: 1.673272
+Train Epoch: 118 [1280/7000 (19%)]	Loss: 1.989124
+Train Epoch: 118 [2560/7000 (37%)]	Loss: 1.869463
+Train Epoch: 118 [3840/7000 (56%)]	Loss: 1.796146
+Train Epoch: 118 [5120/7000 (74%)]	Loss: 1.769099
+Train Epoch: 118 [6400/7000 (93%)]	Loss: 1.787283
+
+Train set: Average loss: 1.8370
+Validation set: Average loss: 1.8530, Accuracy: 577/2000 (29%)
+
+Epoch time: 7.1470 seconds
+Train Epoch: 119 [0/7000 (0%)]	Loss: 1.831582
+Train Epoch: 119 [1280/7000 (19%)]	Loss: 1.814045
+Train Epoch: 119 [2560/7000 (37%)]	Loss: 1.865223
+Train Epoch: 119 [3840/7000 (56%)]	Loss: 1.898224
+Train Epoch: 119 [5120/7000 (74%)]	Loss: 1.926903
+Train Epoch: 119 [6400/7000 (93%)]	Loss: 1.858042
+
+Train set: Average loss: 1.8319
+Validation set: Average loss: 1.8685, Accuracy: 596/2000 (30%)
+
+Epoch time: 7.1546 seconds
+Train Epoch: 120 [0/7000 (0%)]	Loss: 1.806047
+Train Epoch: 120 [1280/7000 (19%)]	Loss: 1.841920
+Train Epoch: 120 [2560/7000 (37%)]	Loss: 1.965302
+Train Epoch: 120 [3840/7000 (56%)]	Loss: 1.694109
+Train Epoch: 120 [5120/7000 (74%)]	Loss: 1.874171
+Train Epoch: 120 [6400/7000 (93%)]	Loss: 1.938811
+
+Train set: Average loss: 1.8286
+Validation set: Average loss: 1.8634, Accuracy: 557/2000 (28%)
+
+Epoch time: 7.1966 seconds
+Train Epoch: 121 [0/7000 (0%)]	Loss: 1.805003
+Train Epoch: 121 [1280/7000 (19%)]	Loss: 1.743514
+Train Epoch: 121 [2560/7000 (37%)]	Loss: 1.787771
+Train Epoch: 121 [3840/7000 (56%)]	Loss: 1.939457
+Train Epoch: 121 [5120/7000 (74%)]	Loss: 1.672630
+Train Epoch: 121 [6400/7000 (93%)]	Loss: 1.738475
+
+Train set: Average loss: 1.8062
+Validation set: Average loss: 1.8314, Accuracy: 597/2000 (30%)
+
+Epoch time: 7.1934 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 122 [0/7000 (0%)]	Loss: 1.822653
+Train Epoch: 122 [1280/7000 (19%)]	Loss: 1.745184
+Train Epoch: 122 [2560/7000 (37%)]	Loss: 1.747407
+Train Epoch: 122 [3840/7000 (56%)]	Loss: 1.735667
+Train Epoch: 122 [5120/7000 (74%)]	Loss: 1.749712
+Train Epoch: 122 [6400/7000 (93%)]	Loss: 1.874696
+
+Train set: Average loss: 1.8062
+Validation set: Average loss: 1.8435, Accuracy: 590/2000 (30%)
+
+Epoch time: 7.1751 seconds
+Train Epoch: 123 [0/7000 (0%)]	Loss: 1.819466
+Train Epoch: 123 [1280/7000 (19%)]	Loss: 1.828169
+Train Epoch: 123 [2560/7000 (37%)]	Loss: 1.857194
+Train Epoch: 123 [3840/7000 (56%)]	Loss: 1.942572
+Train Epoch: 123 [5120/7000 (74%)]	Loss: 1.854364
+Train Epoch: 123 [6400/7000 (93%)]	Loss: 1.897057
+
+Train set: Average loss: 1.8315
+Validation set: Average loss: 1.8503, Accuracy: 599/2000 (30%)
+
+Epoch time: 7.1438 seconds
+Train Epoch: 124 [0/7000 (0%)]	Loss: 1.665250
+Train Epoch: 124 [1280/7000 (19%)]	Loss: 1.831150
+Train Epoch: 124 [2560/7000 (37%)]	Loss: 1.734296
+Train Epoch: 124 [3840/7000 (56%)]	Loss: 1.809947
+Train Epoch: 124 [5120/7000 (74%)]	Loss: 1.800234
+Train Epoch: 124 [6400/7000 (93%)]	Loss: 1.781461
+
+Train set: Average loss: 1.8085
+Validation set: Average loss: 1.8469, Accuracy: 606/2000 (30%)
+
+Epoch time: 7.1890 seconds
+Train Epoch: 125 [0/7000 (0%)]	Loss: 1.795077
+Train Epoch: 125 [1280/7000 (19%)]	Loss: 1.852650
+Train Epoch: 125 [2560/7000 (37%)]	Loss: 1.873955
+Train Epoch: 125 [3840/7000 (56%)]	Loss: 1.890038
+Train Epoch: 125 [5120/7000 (74%)]	Loss: 1.888164
+Train Epoch: 125 [6400/7000 (93%)]	Loss: 1.896813
+
+Train set: Average loss: 1.8305
+Validation set: Average loss: 1.8528, Accuracy: 617/2000 (31%)
+
+Epoch time: 7.1831 seconds
+Train Epoch: 126 [0/7000 (0%)]	Loss: 1.952567
+Train Epoch: 126 [1280/7000 (19%)]	Loss: 1.777985
+Train Epoch: 126 [2560/7000 (37%)]	Loss: 1.827527
+Train Epoch: 126 [3840/7000 (56%)]	Loss: 1.910257
+Train Epoch: 126 [5120/7000 (74%)]	Loss: 1.808341
+Train Epoch: 126 [6400/7000 (93%)]	Loss: 1.819404
+
+Train set: Average loss: 1.8166
+Validation set: Average loss: 1.8335, Accuracy: 601/2000 (30%)
+
+Epoch time: 7.2019 seconds
+Train Epoch: 127 [0/7000 (0%)]	Loss: 1.684395
+Train Epoch: 127 [1280/7000 (19%)]	Loss: 1.698214
+Train Epoch: 127 [2560/7000 (37%)]	Loss: 1.797783
+Train Epoch: 127 [3840/7000 (56%)]	Loss: 1.821171
+Train Epoch: 127 [5120/7000 (74%)]	Loss: 1.803092
+Train Epoch: 127 [6400/7000 (93%)]	Loss: 1.755057
+
+Train set: Average loss: 1.8161
+Validation set: Average loss: 1.8719, Accuracy: 585/2000 (29%)
+
+Epoch time: 7.1639 seconds
+Train Epoch: 128 [0/7000 (0%)]	Loss: 1.783654
+Train Epoch: 128 [1280/7000 (19%)]	Loss: 1.753929
+Train Epoch: 128 [2560/7000 (37%)]	Loss: 1.737631
+Train Epoch: 128 [3840/7000 (56%)]	Loss: 1.712993
+Train Epoch: 128 [5120/7000 (74%)]	Loss: 1.769217
+Train Epoch: 128 [6400/7000 (93%)]	Loss: 1.677148
+
+Train set: Average loss: 1.8181
+Validation set: Average loss: 1.8526, Accuracy: 580/2000 (29%)
+
+Epoch time: 7.1633 seconds
+Train Epoch: 129 [0/7000 (0%)]	Loss: 1.837282
+Train Epoch: 129 [1280/7000 (19%)]	Loss: 1.818948
+Train Epoch: 129 [2560/7000 (37%)]	Loss: 1.792899
+Train Epoch: 129 [3840/7000 (56%)]	Loss: 1.783766
+Train Epoch: 129 [5120/7000 (74%)]	Loss: 1.918846
+Train Epoch: 129 [6400/7000 (93%)]	Loss: 1.925363
+
+Train set: Average loss: 1.8215
+Validation set: Average loss: 1.8248, Accuracy: 584/2000 (29%)
+
+Epoch time: 7.1760 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 130 [0/7000 (0%)]	Loss: 1.753545
+Train Epoch: 130 [1280/7000 (19%)]	Loss: 1.735781
+Train Epoch: 130 [2560/7000 (37%)]	Loss: 1.666525
+Train Epoch: 130 [3840/7000 (56%)]	Loss: 1.763171
+Train Epoch: 130 [5120/7000 (74%)]	Loss: 1.701013
+Train Epoch: 130 [6400/7000 (93%)]	Loss: 1.605119
+
+Train set: Average loss: 1.7829
+Validation set: Average loss: 1.8123, Accuracy: 612/2000 (31%)
+
+Epoch time: 7.2018 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 131 [0/7000 (0%)]	Loss: 1.867905
+Train Epoch: 131 [1280/7000 (19%)]	Loss: 1.770862
+Train Epoch: 131 [2560/7000 (37%)]	Loss: 1.760236
+Train Epoch: 131 [3840/7000 (56%)]	Loss: 1.759007
+Train Epoch: 131 [5120/7000 (74%)]	Loss: 1.754333
+Train Epoch: 131 [6400/7000 (93%)]	Loss: 1.826366
+
+Train set: Average loss: 1.7742
+Validation set: Average loss: 1.8251, Accuracy: 596/2000 (30%)
+
+Epoch time: 7.1741 seconds
+Train Epoch: 132 [0/7000 (0%)]	Loss: 1.964893
+Train Epoch: 132 [1280/7000 (19%)]	Loss: 1.942834
+Train Epoch: 132 [2560/7000 (37%)]	Loss: 1.932301
+Train Epoch: 132 [3840/7000 (56%)]	Loss: 1.783814
+Train Epoch: 132 [5120/7000 (74%)]	Loss: 1.784449
+Train Epoch: 132 [6400/7000 (93%)]	Loss: 1.693454
+
+Train set: Average loss: 1.7920
+Validation set: Average loss: 1.8275, Accuracy: 625/2000 (31%)
+
+Epoch time: 7.1620 seconds
+Train Epoch: 133 [0/7000 (0%)]	Loss: 1.881366
+Train Epoch: 133 [1280/7000 (19%)]	Loss: 1.857226
+Train Epoch: 133 [2560/7000 (37%)]	Loss: 1.705815
+Train Epoch: 133 [3840/7000 (56%)]	Loss: 1.815459
+Train Epoch: 133 [5120/7000 (74%)]	Loss: 1.800770
+Train Epoch: 133 [6400/7000 (93%)]	Loss: 1.642519
+
+Train set: Average loss: 1.7805
+Validation set: Average loss: 1.8126, Accuracy: 608/2000 (30%)
+
+Epoch time: 7.1661 seconds
+Train Epoch: 134 [0/7000 (0%)]	Loss: 1.765685
+Train Epoch: 134 [1280/7000 (19%)]	Loss: 1.791142
+Train Epoch: 134 [2560/7000 (37%)]	Loss: 1.768712
+Train Epoch: 134 [3840/7000 (56%)]	Loss: 1.772310
+Train Epoch: 134 [5120/7000 (74%)]	Loss: 1.819068
+Train Epoch: 134 [6400/7000 (93%)]	Loss: 1.750213
+
+Train set: Average loss: 1.7661
+Validation set: Average loss: 1.8169, Accuracy: 601/2000 (30%)
+
+Epoch time: 7.1614 seconds
+Train Epoch: 135 [0/7000 (0%)]	Loss: 1.887592
+Train Epoch: 135 [1280/7000 (19%)]	Loss: 1.745345
+Train Epoch: 135 [2560/7000 (37%)]	Loss: 1.762983
+Train Epoch: 135 [3840/7000 (56%)]	Loss: 1.749627
+Train Epoch: 135 [5120/7000 (74%)]	Loss: 1.824079
+Train Epoch: 135 [6400/7000 (93%)]	Loss: 1.729759
+
+Train set: Average loss: 1.7798
+Validation set: Average loss: 1.8380, Accuracy: 572/2000 (29%)
+
+Epoch time: 7.1783 seconds
+Train Epoch: 136 [0/7000 (0%)]	Loss: 1.794564
+Train Epoch: 136 [1280/7000 (19%)]	Loss: 1.719141
+Train Epoch: 136 [2560/7000 (37%)]	Loss: 1.684744
+Train Epoch: 136 [3840/7000 (56%)]	Loss: 1.798889
+Train Epoch: 136 [5120/7000 (74%)]	Loss: 1.775162
+Train Epoch: 136 [6400/7000 (93%)]	Loss: 1.639836
+
+Train set: Average loss: 1.7663
+Validation set: Average loss: 1.8183, Accuracy: 616/2000 (31%)
+
+Epoch time: 7.1728 seconds
+Train Epoch: 137 [0/7000 (0%)]	Loss: 1.741759
+Train Epoch: 137 [1280/7000 (19%)]	Loss: 1.778185
+Train Epoch: 137 [2560/7000 (37%)]	Loss: 1.761160
+Train Epoch: 137 [3840/7000 (56%)]	Loss: 1.696544
+Train Epoch: 137 [5120/7000 (74%)]	Loss: 1.726528
+Train Epoch: 137 [6400/7000 (93%)]	Loss: 1.687937
+
+Train set: Average loss: 1.7483
+Validation set: Average loss: 1.8026, Accuracy: 615/2000 (31%)
+
+Epoch time: 7.1490 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 138 [0/7000 (0%)]	Loss: 1.686091
+Train Epoch: 138 [1280/7000 (19%)]	Loss: 1.698532
+Train Epoch: 138 [2560/7000 (37%)]	Loss: 1.772942
+Train Epoch: 138 [3840/7000 (56%)]	Loss: 1.897023
+Train Epoch: 138 [5120/7000 (74%)]	Loss: 1.838899
+Train Epoch: 138 [6400/7000 (93%)]	Loss: 1.780593
+
+Train set: Average loss: 1.7672
+Validation set: Average loss: 1.8111, Accuracy: 604/2000 (30%)
+
+Epoch time: 7.1627 seconds
+Train Epoch: 139 [0/7000 (0%)]	Loss: 1.767457
+Train Epoch: 139 [1280/7000 (19%)]	Loss: 1.757921
+Train Epoch: 139 [2560/7000 (37%)]	Loss: 1.749039
+Train Epoch: 139 [3840/7000 (56%)]	Loss: 1.861295
+Train Epoch: 139 [5120/7000 (74%)]	Loss: 1.991125
+Train Epoch: 139 [6400/7000 (93%)]	Loss: 1.934160
+
+Train set: Average loss: 1.7533
+Validation set: Average loss: 1.8423, Accuracy: 610/2000 (30%)
+
+Epoch time: 7.1785 seconds
+Train Epoch: 140 [0/7000 (0%)]	Loss: 1.850483
+Train Epoch: 140 [1280/7000 (19%)]	Loss: 1.785939
+Train Epoch: 140 [2560/7000 (37%)]	Loss: 1.750270
+Train Epoch: 140 [3840/7000 (56%)]	Loss: 1.736611
+Train Epoch: 140 [5120/7000 (74%)]	Loss: 1.728021
+Train Epoch: 140 [6400/7000 (93%)]	Loss: 1.688742
+
+Train set: Average loss: 1.7733
+Validation set: Average loss: 1.8191, Accuracy: 598/2000 (30%)
+
+Epoch time: 7.1783 seconds
+Train Epoch: 141 [0/7000 (0%)]	Loss: 1.817652
+Train Epoch: 141 [1280/7000 (19%)]	Loss: 1.889335
+Train Epoch: 141 [2560/7000 (37%)]	Loss: 1.818778
+Train Epoch: 141 [3840/7000 (56%)]	Loss: 1.768623
+Train Epoch: 141 [5120/7000 (74%)]	Loss: 1.682437
+Train Epoch: 141 [6400/7000 (93%)]	Loss: 1.803807
+
+Train set: Average loss: 1.7693
+Validation set: Average loss: 1.8095, Accuracy: 619/2000 (31%)
+
+Epoch time: 7.1675 seconds
+Train Epoch: 142 [0/7000 (0%)]	Loss: 1.715275
+Train Epoch: 142 [1280/7000 (19%)]	Loss: 1.633766
+Train Epoch: 142 [2560/7000 (37%)]	Loss: 1.681267
+Train Epoch: 142 [3840/7000 (56%)]	Loss: 1.712920
+Train Epoch: 142 [5120/7000 (74%)]	Loss: 1.769686
+Train Epoch: 142 [6400/7000 (93%)]	Loss: 1.600784
+
+Train set: Average loss: 1.7357
+Validation set: Average loss: 1.8147, Accuracy: 610/2000 (30%)
+
+Epoch time: 7.1648 seconds
+Train Epoch: 143 [0/7000 (0%)]	Loss: 1.802128
+Train Epoch: 143 [1280/7000 (19%)]	Loss: 1.688607
+Train Epoch: 143 [2560/7000 (37%)]	Loss: 1.612234
+Train Epoch: 143 [3840/7000 (56%)]	Loss: 1.695907
+Train Epoch: 143 [5120/7000 (74%)]	Loss: 1.705954
+Train Epoch: 143 [6400/7000 (93%)]	Loss: 1.793508
+
+Train set: Average loss: 1.7322
+Validation set: Average loss: 1.8271, Accuracy: 617/2000 (31%)
+
+Epoch time: 7.2230 seconds
+Train Epoch: 144 [0/7000 (0%)]	Loss: 1.593871
+Train Epoch: 144 [1280/7000 (19%)]	Loss: 1.701901
+Train Epoch: 144 [2560/7000 (37%)]	Loss: 1.691553
+Train Epoch: 144 [3840/7000 (56%)]	Loss: 1.840961
+Train Epoch: 144 [5120/7000 (74%)]	Loss: 1.782771
+Train Epoch: 144 [6400/7000 (93%)]	Loss: 1.616810
+
+Train set: Average loss: 1.7537
+Validation set: Average loss: 1.8261, Accuracy: 583/2000 (29%)
+
+Epoch time: 7.1560 seconds
+Train Epoch: 145 [0/7000 (0%)]	Loss: 1.775192
+Train Epoch: 145 [1280/7000 (19%)]	Loss: 1.909216
+Train Epoch: 145 [2560/7000 (37%)]	Loss: 1.729965
+Train Epoch: 145 [3840/7000 (56%)]	Loss: 1.714854
+Train Epoch: 145 [5120/7000 (74%)]	Loss: 1.598744
+Train Epoch: 145 [6400/7000 (93%)]	Loss: 1.652626
+
+Train set: Average loss: 1.7621
+Validation set: Average loss: 1.8161, Accuracy: 606/2000 (30%)
+
+Epoch time: 7.1593 seconds
+Train Epoch: 146 [0/7000 (0%)]	Loss: 1.729847
+Train Epoch: 146 [1280/7000 (19%)]	Loss: 1.776367
+Train Epoch: 146 [2560/7000 (37%)]	Loss: 1.820006
+Train Epoch: 146 [3840/7000 (56%)]	Loss: 1.663106
+Train Epoch: 146 [5120/7000 (74%)]	Loss: 1.772753
+Train Epoch: 146 [6400/7000 (93%)]	Loss: 1.809884
+
+Train set: Average loss: 1.7709
+Validation set: Average loss: 1.8056, Accuracy: 629/2000 (31%)
+
+Epoch time: 7.1650 seconds
+Train Epoch: 147 [0/7000 (0%)]	Loss: 1.690414
+Train Epoch: 147 [1280/7000 (19%)]	Loss: 1.708150
+Train Epoch: 147 [2560/7000 (37%)]	Loss: 1.817903
+Train Epoch: 147 [3840/7000 (56%)]	Loss: 1.758235
+Train Epoch: 147 [5120/7000 (74%)]	Loss: 1.631350
+Train Epoch: 147 [6400/7000 (93%)]	Loss: 1.609403
+
+Train set: Average loss: 1.7352
+Validation set: Average loss: 1.8609, Accuracy: 585/2000 (29%)
+
+Epoch time: 7.1825 seconds
+Train Epoch: 148 [0/7000 (0%)]	Loss: 1.837487
+Train Epoch: 148 [1280/7000 (19%)]	Loss: 1.707157
+Train Epoch: 148 [2560/7000 (37%)]	Loss: 1.702414
+Train Epoch: 148 [3840/7000 (56%)]	Loss: 1.674630
+Train Epoch: 148 [5120/7000 (74%)]	Loss: 1.719098
+Train Epoch: 148 [6400/7000 (93%)]	Loss: 1.828227
+
+Train set: Average loss: 1.7632
+Validation set: Average loss: 1.8190, Accuracy: 585/2000 (29%)
+
+Epoch time: 7.1797 seconds
+Train Epoch: 149 [0/7000 (0%)]	Loss: 1.735953
+Train Epoch: 149 [1280/7000 (19%)]	Loss: 1.718656
+Train Epoch: 149 [2560/7000 (37%)]	Loss: 1.652893
+Train Epoch: 149 [3840/7000 (56%)]	Loss: 1.616508
+Train Epoch: 149 [5120/7000 (74%)]	Loss: 1.865762
+Train Epoch: 149 [6400/7000 (93%)]	Loss: 1.645353
+
+Train set: Average loss: 1.7397
+Validation set: Average loss: 1.8313, Accuracy: 604/2000 (30%)
+
+Epoch time: 7.2046 seconds
+Train Epoch: 150 [0/7000 (0%)]	Loss: 1.641194
+Train Epoch: 150 [1280/7000 (19%)]	Loss: 1.664632
+Train Epoch: 150 [2560/7000 (37%)]	Loss: 1.843871
+Train Epoch: 150 [3840/7000 (56%)]	Loss: 1.716909
+Train Epoch: 150 [5120/7000 (74%)]	Loss: 1.763678
+Train Epoch: 150 [6400/7000 (93%)]	Loss: 1.661402
+
+Train set: Average loss: 1.7257
+Validation set: Average loss: 1.8194, Accuracy: 613/2000 (31%)
+
+Epoch time: 7.1608 seconds
+Train Epoch: 151 [0/7000 (0%)]	Loss: 1.896359
+Train Epoch: 151 [1280/7000 (19%)]	Loss: 1.780138
+Train Epoch: 151 [2560/7000 (37%)]	Loss: 1.742967
+Train Epoch: 151 [3840/7000 (56%)]	Loss: 1.821587
+Train Epoch: 151 [5120/7000 (74%)]	Loss: 1.629778
+Train Epoch: 151 [6400/7000 (93%)]	Loss: 1.625157
+
+Train set: Average loss: 1.7315
+Validation set: Average loss: 1.7935, Accuracy: 633/2000 (32%)
+
+Epoch time: 7.2100 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 152 [0/7000 (0%)]	Loss: 1.704817
+Train Epoch: 152 [1280/7000 (19%)]	Loss: 1.718026
+Train Epoch: 152 [2560/7000 (37%)]	Loss: 1.637831
+Train Epoch: 152 [3840/7000 (56%)]	Loss: 1.577686
+Train Epoch: 152 [5120/7000 (74%)]	Loss: 1.857853
+Train Epoch: 152 [6400/7000 (93%)]	Loss: 1.618745
+
+Train set: Average loss: 1.7092
+Validation set: Average loss: 1.7967, Accuracy: 607/2000 (30%)
+
+Epoch time: 7.1881 seconds
+Train Epoch: 153 [0/7000 (0%)]	Loss: 1.607143
+Train Epoch: 153 [1280/7000 (19%)]	Loss: 1.639364
+Train Epoch: 153 [2560/7000 (37%)]	Loss: 1.691279
+Train Epoch: 153 [3840/7000 (56%)]	Loss: 1.713408
+Train Epoch: 153 [5120/7000 (74%)]	Loss: 1.544108
+Train Epoch: 153 [6400/7000 (93%)]	Loss: 1.782070
+
+Train set: Average loss: 1.7007
+Validation set: Average loss: 1.8324, Accuracy: 625/2000 (31%)
+
+Epoch time: 7.1617 seconds
+Train Epoch: 154 [0/7000 (0%)]	Loss: 1.859343
+Train Epoch: 154 [1280/7000 (19%)]	Loss: 1.791782
+Train Epoch: 154 [2560/7000 (37%)]	Loss: 1.679998
+Train Epoch: 154 [3840/7000 (56%)]	Loss: 1.705144
+Train Epoch: 154 [5120/7000 (74%)]	Loss: 1.665194
+Train Epoch: 154 [6400/7000 (93%)]	Loss: 1.785369
+
+Train set: Average loss: 1.7113
+Validation set: Average loss: 1.7994, Accuracy: 623/2000 (31%)
+
+Epoch time: 7.1845 seconds
+Train Epoch: 155 [0/7000 (0%)]	Loss: 1.711285
+Train Epoch: 155 [1280/7000 (19%)]	Loss: 1.728539
+Train Epoch: 155 [2560/7000 (37%)]	Loss: 1.778214
+Train Epoch: 155 [3840/7000 (56%)]	Loss: 1.674232
+Train Epoch: 155 [5120/7000 (74%)]	Loss: 1.728520
+Train Epoch: 155 [6400/7000 (93%)]	Loss: 1.784247
+
+Train set: Average loss: 1.7141
+Validation set: Average loss: 1.8070, Accuracy: 609/2000 (30%)
+
+Epoch time: 7.1771 seconds
+Train Epoch: 156 [0/7000 (0%)]	Loss: 1.594036
+Train Epoch: 156 [1280/7000 (19%)]	Loss: 1.612966
+Train Epoch: 156 [2560/7000 (37%)]	Loss: 1.656823
+Train Epoch: 156 [3840/7000 (56%)]	Loss: 1.721194
+Train Epoch: 156 [5120/7000 (74%)]	Loss: 1.718527
+Train Epoch: 156 [6400/7000 (93%)]	Loss: 1.598157
+
+Train set: Average loss: 1.7027
+Validation set: Average loss: 1.8148, Accuracy: 607/2000 (30%)
+
+Epoch time: 7.1582 seconds
+Train Epoch: 157 [0/7000 (0%)]	Loss: 1.698208
+Train Epoch: 157 [1280/7000 (19%)]	Loss: 1.687312
+Train Epoch: 157 [2560/7000 (37%)]	Loss: 1.576853
+Train Epoch: 157 [3840/7000 (56%)]	Loss: 1.615855
+Train Epoch: 157 [5120/7000 (74%)]	Loss: 1.665406
+Train Epoch: 157 [6400/7000 (93%)]	Loss: 1.585961
+
+Train set: Average loss: 1.7085
+Validation set: Average loss: 1.7985, Accuracy: 625/2000 (31%)
+
+Epoch time: 7.1628 seconds
+Train Epoch: 158 [0/7000 (0%)]	Loss: 1.674621
+Train Epoch: 158 [1280/7000 (19%)]	Loss: 1.799059
+Train Epoch: 158 [2560/7000 (37%)]	Loss: 1.681596
+Train Epoch: 158 [3840/7000 (56%)]	Loss: 1.665387
+Train Epoch: 158 [5120/7000 (74%)]	Loss: 1.648706
+Train Epoch: 158 [6400/7000 (93%)]	Loss: 1.636509
+
+Train set: Average loss: 1.7008
+Validation set: Average loss: 1.7955, Accuracy: 634/2000 (32%)
+
+Epoch time: 7.1675 seconds
+Train Epoch: 159 [0/7000 (0%)]	Loss: 1.678466
+Train Epoch: 159 [1280/7000 (19%)]	Loss: 1.671474
+Train Epoch: 159 [2560/7000 (37%)]	Loss: 1.726869
+Train Epoch: 159 [3840/7000 (56%)]	Loss: 1.690009
+Train Epoch: 159 [5120/7000 (74%)]	Loss: 1.742515
+Train Epoch: 159 [6400/7000 (93%)]	Loss: 1.740159
+
+Train set: Average loss: 1.6855
+Validation set: Average loss: 1.7931, Accuracy: 608/2000 (30%)
+
+Epoch time: 7.1555 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 160 [0/7000 (0%)]	Loss: 1.590476
+Train Epoch: 160 [1280/7000 (19%)]	Loss: 1.724931
+Train Epoch: 160 [2560/7000 (37%)]	Loss: 1.688233
+Train Epoch: 160 [3840/7000 (56%)]	Loss: 1.646587
+Train Epoch: 160 [5120/7000 (74%)]	Loss: 1.644886
+Train Epoch: 160 [6400/7000 (93%)]	Loss: 1.770129
+
+Train set: Average loss: 1.6656
+Validation set: Average loss: 1.8035, Accuracy: 628/2000 (31%)
+
+Epoch time: 7.1928 seconds
+Train Epoch: 161 [0/7000 (0%)]	Loss: 1.701676
+Train Epoch: 161 [1280/7000 (19%)]	Loss: 1.757100
+Train Epoch: 161 [2560/7000 (37%)]	Loss: 1.835890
+Train Epoch: 161 [3840/7000 (56%)]	Loss: 1.511927
+Train Epoch: 161 [5120/7000 (74%)]	Loss: 1.646994
+Train Epoch: 161 [6400/7000 (93%)]	Loss: 1.665578
+
+Train set: Average loss: 1.6794
+Validation set: Average loss: 1.8043, Accuracy: 593/2000 (30%)
+
+Epoch time: 7.1822 seconds
+Train Epoch: 162 [0/7000 (0%)]	Loss: 1.620817
+Train Epoch: 162 [1280/7000 (19%)]	Loss: 1.753689
+Train Epoch: 162 [2560/7000 (37%)]	Loss: 1.624957
+Train Epoch: 162 [3840/7000 (56%)]	Loss: 1.737646
+Train Epoch: 162 [5120/7000 (74%)]	Loss: 1.650914
+Train Epoch: 162 [6400/7000 (93%)]	Loss: 1.723696
+
+Train set: Average loss: 1.6965
+Validation set: Average loss: 1.7935, Accuracy: 643/2000 (32%)
+
+Epoch time: 7.1823 seconds
+Train Epoch: 163 [0/7000 (0%)]	Loss: 1.711217
+Train Epoch: 163 [1280/7000 (19%)]	Loss: 1.671182
+Train Epoch: 163 [2560/7000 (37%)]	Loss: 1.767871
+Train Epoch: 163 [3840/7000 (56%)]	Loss: 1.711063
+Train Epoch: 163 [5120/7000 (74%)]	Loss: 1.614240
+Train Epoch: 163 [6400/7000 (93%)]	Loss: 1.634831
+
+Train set: Average loss: 1.6801
+Validation set: Average loss: 1.8154, Accuracy: 626/2000 (31%)
+
+Epoch time: 7.1483 seconds
+Train Epoch: 164 [0/7000 (0%)]	Loss: 1.621504
+Train Epoch: 164 [1280/7000 (19%)]	Loss: 1.659350
+Train Epoch: 164 [2560/7000 (37%)]	Loss: 1.795287
+Train Epoch: 164 [3840/7000 (56%)]	Loss: 1.813756
+Train Epoch: 164 [5120/7000 (74%)]	Loss: 1.801385
+Train Epoch: 164 [6400/7000 (93%)]	Loss: 1.694211
+
+Train set: Average loss: 1.7047
+Validation set: Average loss: 1.8018, Accuracy: 610/2000 (30%)
+
+Epoch time: 7.1748 seconds
+Train Epoch: 165 [0/7000 (0%)]	Loss: 1.618364
+Train Epoch: 165 [1280/7000 (19%)]	Loss: 1.553864
+Train Epoch: 165 [2560/7000 (37%)]	Loss: 1.732021
+Train Epoch: 165 [3840/7000 (56%)]	Loss: 1.681596
+Train Epoch: 165 [5120/7000 (74%)]	Loss: 1.626142
+Train Epoch: 165 [6400/7000 (93%)]	Loss: 1.772959
+
+Train set: Average loss: 1.6746
+Validation set: Average loss: 1.7861, Accuracy: 669/2000 (33%)
+
+Epoch time: 7.1662 seconds
+  -> new best val loss, checkpoint saved to CNN_checkpoint_8
+Train Epoch: 166 [0/7000 (0%)]	Loss: 1.656969
+Train Epoch: 166 [1280/7000 (19%)]	Loss: 1.573352
+Train Epoch: 166 [2560/7000 (37%)]	Loss: 1.568555
+Train Epoch: 166 [3840/7000 (56%)]	Loss: 1.561887
+Train Epoch: 166 [5120/7000 (74%)]	Loss: 1.576500
+Train Epoch: 166 [6400/7000 (93%)]	Loss: 1.660990
+
+Train set: Average loss: 1.6662
+Validation set: Average loss: 1.8234, Accuracy: 606/2000 (30%)
+
+Epoch time: 7.1995 seconds
+Train Epoch: 167 [0/7000 (0%)]	Loss: 1.815261
+Train Epoch: 167 [1280/7000 (19%)]	Loss: 1.580182
+Train Epoch: 167 [2560/7000 (37%)]	Loss: 1.673544
+Train Epoch: 167 [3840/7000 (56%)]	Loss: 1.699456
+Train Epoch: 167 [5120/7000 (74%)]	Loss: 1.664744
+Train Epoch: 167 [6400/7000 (93%)]	Loss: 1.651969
+
+Train set: Average loss: 1.6685
+Validation set: Average loss: 1.8012, Accuracy: 601/2000 (30%)
+
+Epoch time: 7.1885 seconds
+Train Epoch: 168 [0/7000 (0%)]	Loss: 1.620151
+Train Epoch: 168 [1280/7000 (19%)]	Loss: 1.574645
+Train Epoch: 168 [2560/7000 (37%)]	Loss: 1.677189
+Train Epoch: 168 [3840/7000 (56%)]	Loss: 1.652316
+Train Epoch: 168 [5120/7000 (74%)]	Loss: 1.713553
+Train Epoch: 168 [6400/7000 (93%)]	Loss: 1.783515
+
+Train set: Average loss: 1.6808
+Validation set: Average loss: 1.9071, Accuracy: 597/2000 (30%)
+
+Epoch time: 7.1914 seconds
+Train Epoch: 169 [0/7000 (0%)]	Loss: 1.859189
+Train Epoch: 169 [1280/7000 (19%)]	Loss: 1.629982
+Train Epoch: 169 [2560/7000 (37%)]	Loss: 1.758353
+Train Epoch: 169 [3840/7000 (56%)]	Loss: 1.522768
+Train Epoch: 169 [5120/7000 (74%)]	Loss: 1.750994
+Train Epoch: 169 [6400/7000 (93%)]	Loss: 1.648594
+
+Train set: Average loss: 1.7072
+Validation set: Average loss: 1.7927, Accuracy: 613/2000 (31%)
+
+Epoch time: 7.1747 seconds
+Train Epoch: 170 [0/7000 (0%)]	Loss: 1.576224
+Train Epoch: 170 [1280/7000 (19%)]	Loss: 1.739213
+Train Epoch: 170 [2560/7000 (37%)]	Loss: 1.690569
+Train Epoch: 170 [3840/7000 (56%)]	Loss: 1.685127
+Train Epoch: 170 [5120/7000 (74%)]	Loss: 1.643012
+Train Epoch: 170 [6400/7000 (93%)]	Loss: 1.598831
+
+Train set: Average loss: 1.6510
+Validation set: Average loss: 1.7957, Accuracy: 624/2000 (31%)
+
+Epoch time: 7.8745 seconds
+Train Epoch: 171 [0/7000 (0%)]	Loss: 1.685602
+Train Epoch: 171 [1280/7000 (19%)]	Loss: 1.515794
+Train Epoch: 171 [2560/7000 (37%)]	Loss: 1.643300
+Train Epoch: 171 [3840/7000 (56%)]	Loss: 1.614800
+Train Epoch: 171 [5120/7000 (74%)]	Loss: 1.738768
+Train Epoch: 171 [6400/7000 (93%)]	Loss: 1.777599
+
+Train set: Average loss: 1.6477
+Validation set: Average loss: 1.8076, Accuracy: 634/2000 (32%)
+
+Epoch time: 7.1817 seconds
+Train Epoch: 172 [0/7000 (0%)]	Loss: 1.594443
+Train Epoch: 172 [1280/7000 (19%)]	Loss: 1.622953
+Train Epoch: 172 [2560/7000 (37%)]	Loss: 1.699189
+Train Epoch: 172 [3840/7000 (56%)]	Loss: 1.664304
+Train Epoch: 172 [5120/7000 (74%)]	Loss: 1.617298
+Train Epoch: 172 [6400/7000 (93%)]	Loss: 1.647479
+
+Train set: Average loss: 1.6514
+Validation set: Average loss: 1.8264, Accuracy: 619/2000 (31%)
+
+Epoch time: 7.1597 seconds
+Train Epoch: 173 [0/7000 (0%)]	Loss: 1.688706
+Train Epoch: 173 [1280/7000 (19%)]	Loss: 1.808835
+Train Epoch: 173 [2560/7000 (37%)]	Loss: 1.641626
+Train Epoch: 173 [3840/7000 (56%)]	Loss: 1.573990
+Train Epoch: 173 [5120/7000 (74%)]	Loss: 1.623767
+Train Epoch: 173 [6400/7000 (93%)]	Loss: 1.599849
+
+Train set: Average loss: 1.6859
+Validation set: Average loss: 1.8295, Accuracy: 599/2000 (30%)
+
+Epoch time: 7.1957 seconds
+Train Epoch: 174 [0/7000 (0%)]	Loss: 1.671174
+Train Epoch: 174 [1280/7000 (19%)]	Loss: 1.590445
+Train Epoch: 174 [2560/7000 (37%)]	Loss: 1.633239
+Train Epoch: 174 [3840/7000 (56%)]	Loss: 1.677797
+Train Epoch: 174 [5120/7000 (74%)]	Loss: 1.542181
+Train Epoch: 174 [6400/7000 (93%)]	Loss: 1.616403
+
+Train set: Average loss: 1.6524
+Validation set: Average loss: 1.8067, Accuracy: 634/2000 (32%)
+
+Epoch time: 7.2018 seconds
+Train Epoch: 175 [0/7000 (0%)]	Loss: 1.778289
+Train Epoch: 175 [1280/7000 (19%)]	Loss: 1.581384
+Train Epoch: 175 [2560/7000 (37%)]	Loss: 1.549044
+Train Epoch: 175 [3840/7000 (56%)]	Loss: 1.748553
+Train Epoch: 175 [5120/7000 (74%)]	Loss: 1.678246
+Train Epoch: 175 [6400/7000 (93%)]	Loss: 1.642129
+
+Train set: Average loss: 1.6382
+Validation set: Average loss: 1.8171, Accuracy: 628/2000 (31%)
+
+Epoch time: 7.2008 seconds
+Train Epoch: 176 [0/7000 (0%)]	Loss: 1.634547
+Train Epoch: 176 [1280/7000 (19%)]	Loss: 1.656027
+Train Epoch: 176 [2560/7000 (37%)]	Loss: 1.823529
+Train Epoch: 176 [3840/7000 (56%)]	Loss: 1.583930
+Train Epoch: 176 [5120/7000 (74%)]	Loss: 1.629222
+Train Epoch: 176 [6400/7000 (93%)]	Loss: 1.558473
+
+Train set: Average loss: 1.6238
+Validation set: Average loss: 1.8238, Accuracy: 596/2000 (30%)
+
+Epoch time: 7.1998 seconds
+Train Epoch: 177 [0/7000 (0%)]	Loss: 1.573279
+Train Epoch: 177 [1280/7000 (19%)]	Loss: 1.656384
+Train Epoch: 177 [2560/7000 (37%)]	Loss: 1.578780
+Train Epoch: 177 [3840/7000 (56%)]	Loss: 1.479186
+Train Epoch: 177 [5120/7000 (74%)]	Loss: 1.577912
+Train Epoch: 177 [6400/7000 (93%)]	Loss: 1.601437
+
+Train set: Average loss: 1.6236
+Validation set: Average loss: 1.8191, Accuracy: 616/2000 (31%)
+
+Epoch time: 7.1748 seconds
+Train Epoch: 178 [0/7000 (0%)]	Loss: 1.610744
+Train Epoch: 178 [1280/7000 (19%)]	Loss: 1.635976
+Train Epoch: 178 [2560/7000 (37%)]	Loss: 1.583071
+Train Epoch: 178 [3840/7000 (56%)]	Loss: 1.554863
+Train Epoch: 178 [5120/7000 (74%)]	Loss: 1.655030
+Train Epoch: 178 [6400/7000 (93%)]	Loss: 1.556000
+
+Train set: Average loss: 1.6402
+Validation set: Average loss: 1.8317, Accuracy: 600/2000 (30%)
+
+Epoch time: 7.1436 seconds
+Train Epoch: 179 [0/7000 (0%)]	Loss: 1.577891
+Train Epoch: 179 [1280/7000 (19%)]	Loss: 1.525671
+Train Epoch: 179 [2560/7000 (37%)]	Loss: 1.630523
+Train Epoch: 179 [3840/7000 (56%)]	Loss: 1.597423
+Train Epoch: 179 [5120/7000 (74%)]	Loss: 1.551411
+Train Epoch: 179 [6400/7000 (93%)]	Loss: 1.646063
+
+Train set: Average loss: 1.6283
+Validation set: Average loss: 1.7932, Accuracy: 624/2000 (31%)
+
+Epoch time: 7.1884 seconds
+Train Epoch: 180 [0/7000 (0%)]	Loss: 1.709545
+Train Epoch: 180 [1280/7000 (19%)]	Loss: 1.631724
+Train Epoch: 180 [2560/7000 (37%)]	Loss: 1.679009
+Train Epoch: 180 [3840/7000 (56%)]	Loss: 1.723915
+Train Epoch: 180 [5120/7000 (74%)]	Loss: 1.654149
+Train Epoch: 180 [6400/7000 (93%)]	Loss: 1.561029
+
+Train set: Average loss: 1.6386
+Validation set: Average loss: 1.8110, Accuracy: 634/2000 (32%)
+
+Epoch time: 7.1949 seconds
+Train Epoch: 181 [0/7000 (0%)]	Loss: 1.626809
+Train Epoch: 181 [1280/7000 (19%)]	Loss: 1.617923
+Train Epoch: 181 [2560/7000 (37%)]	Loss: 1.589554
+Train Epoch: 181 [3840/7000 (56%)]	Loss: 1.643927
+Train Epoch: 181 [5120/7000 (74%)]	Loss: 1.567518
+Train Epoch: 181 [6400/7000 (93%)]	Loss: 1.596272
+
+Train set: Average loss: 1.6375
+Validation set: Average loss: 1.8164, Accuracy: 630/2000 (32%)
+
+Epoch time: 7.1741 seconds
+Train Epoch: 182 [0/7000 (0%)]	Loss: 1.689327
+Train Epoch: 182 [1280/7000 (19%)]	Loss: 1.577420
+Train Epoch: 182 [2560/7000 (37%)]	Loss: 1.523963
+Train Epoch: 182 [3840/7000 (56%)]	Loss: 1.560881
+Train Epoch: 182 [5120/7000 (74%)]	Loss: 1.574921
+Train Epoch: 182 [6400/7000 (93%)]	Loss: 1.683876
+
+Train set: Average loss: 1.6229
+Validation set: Average loss: 1.8566, Accuracy: 610/2000 (30%)
+
+Epoch time: 7.2026 seconds
+Train Epoch: 183 [0/7000 (0%)]	Loss: 1.415612
+Train Epoch: 183 [1280/7000 (19%)]	Loss: 1.588956
+Train Epoch: 183 [2560/7000 (37%)]	Loss: 1.616571
+Train Epoch: 183 [3840/7000 (56%)]	Loss: 1.586188
+Train Epoch: 183 [5120/7000 (74%)]	Loss: 1.630549
+Train Epoch: 183 [6400/7000 (93%)]	Loss: 1.666567
+
+Train set: Average loss: 1.6236
+Validation set: Average loss: 1.7921, Accuracy: 648/2000 (32%)
+
+Epoch time: 7.1542 seconds
+Train Epoch: 184 [0/7000 (0%)]	Loss: 1.518189
+Train Epoch: 184 [1280/7000 (19%)]	Loss: 1.704626
+Train Epoch: 184 [2560/7000 (37%)]	Loss: 1.677065
+Train Epoch: 184 [3840/7000 (56%)]	Loss: 1.478639
+Train Epoch: 184 [5120/7000 (74%)]	Loss: 1.708656
+Train Epoch: 184 [6400/7000 (93%)]	Loss: 1.477776
+
+Train set: Average loss: 1.6288
+Validation set: Average loss: 1.7983, Accuracy: 638/2000 (32%)
+
+Epoch time: 7.1886 seconds
+Train Epoch: 185 [0/7000 (0%)]	Loss: 1.670689
+Train Epoch: 185 [1280/7000 (19%)]	Loss: 1.628160
+Train Epoch: 185 [2560/7000 (37%)]	Loss: 1.735449
+Train Epoch: 185 [3840/7000 (56%)]	Loss: 1.625269
+Train Epoch: 185 [5120/7000 (74%)]	Loss: 1.616832
+Train Epoch: 185 [6400/7000 (93%)]	Loss: 1.635267
+
+Train set: Average loss: 1.6252
+Validation set: Average loss: 1.8313, Accuracy: 629/2000 (31%)
+
+Epoch time: 7.2190 seconds
+Train Epoch: 186 [0/7000 (0%)]	Loss: 1.652188
+Train Epoch: 186 [1280/7000 (19%)]	Loss: 1.668938
+Train Epoch: 186 [2560/7000 (37%)]	Loss: 1.539316
+Train Epoch: 186 [3840/7000 (56%)]	Loss: 1.608261
+Train Epoch: 186 [5120/7000 (74%)]	Loss: 1.668333
+Train Epoch: 186 [6400/7000 (93%)]	Loss: 1.585215
+
+Train set: Average loss: 1.6115
+Validation set: Average loss: 1.8172, Accuracy: 656/2000 (33%)
+
+Epoch time: 7.2112 seconds
+Train Epoch: 187 [0/7000 (0%)]	Loss: 1.601136
+Train Epoch: 187 [1280/7000 (19%)]	Loss: 1.698525
+Train Epoch: 187 [2560/7000 (37%)]	Loss: 1.779624
+Train Epoch: 187 [3840/7000 (56%)]	Loss: 1.691736
+Train Epoch: 187 [5120/7000 (74%)]	Loss: 1.680915
+Train Epoch: 187 [6400/7000 (93%)]	Loss: 1.680413
+
+Train set: Average loss: 1.6086
+Validation set: Average loss: 1.8052, Accuracy: 644/2000 (32%)
+
+Epoch time: 7.1502 seconds
+Train Epoch: 188 [0/7000 (0%)]	Loss: 1.505347
+Train Epoch: 188 [1280/7000 (19%)]	Loss: 1.597355
+Train Epoch: 188 [2560/7000 (37%)]	Loss: 1.557552
+Train Epoch: 188 [3840/7000 (56%)]	Loss: 1.646731
+Train Epoch: 188 [5120/7000 (74%)]	Loss: 1.507630
+Train Epoch: 188 [6400/7000 (93%)]	Loss: 1.605625
+
+Train set: Average loss: 1.5798
+Validation set: Average loss: 1.8395, Accuracy: 630/2000 (32%)
+
+Epoch time: 7.1815 seconds
+Train Epoch: 189 [0/7000 (0%)]	Loss: 1.466485
+Train Epoch: 189 [1280/7000 (19%)]	Loss: 1.556783
+Train Epoch: 189 [2560/7000 (37%)]	Loss: 1.578628
+Train Epoch: 189 [3840/7000 (56%)]	Loss: 1.600096
+Train Epoch: 189 [5120/7000 (74%)]	Loss: 1.759872
+Train Epoch: 189 [6400/7000 (93%)]	Loss: 1.542573
+
+Train set: Average loss: 1.6023
+Validation set: Average loss: 1.8056, Accuracy: 637/2000 (32%)
+
+Epoch time: 7.1904 seconds
+Train Epoch: 190 [0/7000 (0%)]	Loss: 1.610888
+Train Epoch: 190 [1280/7000 (19%)]	Loss: 1.632819
+Train Epoch: 190 [2560/7000 (37%)]	Loss: 1.691754
+Train Epoch: 190 [3840/7000 (56%)]	Loss: 1.637377
+Train Epoch: 190 [5120/7000 (74%)]	Loss: 1.604824
+Train Epoch: 190 [6400/7000 (93%)]	Loss: 1.661251
+
+Train set: Average loss: 1.6015
+Validation set: Average loss: 1.8454, Accuracy: 632/2000 (32%)
+
+Epoch time: 7.1732 seconds
+Train Epoch: 191 [0/7000 (0%)]	Loss: 1.565464
+Train Epoch: 191 [1280/7000 (19%)]	Loss: 1.540531
+Train Epoch: 191 [2560/7000 (37%)]	Loss: 1.652458
+Train Epoch: 191 [3840/7000 (56%)]	Loss: 1.582404
+Train Epoch: 191 [5120/7000 (74%)]	Loss: 1.674784
+Train Epoch: 191 [6400/7000 (93%)]	Loss: 1.598065
+
+Train set: Average loss: 1.5984
+Validation set: Average loss: 1.8251, Accuracy: 630/2000 (32%)
+
+Epoch time: 7.1912 seconds
+Train Epoch: 192 [0/7000 (0%)]	Loss: 1.653154
+Train Epoch: 192 [1280/7000 (19%)]	Loss: 1.643732
+Train Epoch: 192 [2560/7000 (37%)]	Loss: 1.460238
+Train Epoch: 192 [3840/7000 (56%)]	Loss: 1.723702
+Train Epoch: 192 [5120/7000 (74%)]	Loss: 1.597944
+Train Epoch: 192 [6400/7000 (93%)]	Loss: 1.523206
+
+Train set: Average loss: 1.5807
+Validation set: Average loss: 1.8170, Accuracy: 629/2000 (31%)
+
+Epoch time: 7.1832 seconds
+Train Epoch: 193 [0/7000 (0%)]	Loss: 1.562008
+Train Epoch: 193 [1280/7000 (19%)]	Loss: 1.641742
+Train Epoch: 193 [2560/7000 (37%)]	Loss: 1.606366
+Train Epoch: 193 [3840/7000 (56%)]	Loss: 1.767770
+Train Epoch: 193 [5120/7000 (74%)]	Loss: 1.748011
+Train Epoch: 193 [6400/7000 (93%)]	Loss: 1.634042
+
+Train set: Average loss: 1.5815
+Validation set: Average loss: 1.8001, Accuracy: 653/2000 (33%)
+
+Epoch time: 7.2134 seconds
+Train Epoch: 194 [0/7000 (0%)]	Loss: 1.373085
+Train Epoch: 194 [1280/7000 (19%)]	Loss: 1.434245
+Train Epoch: 194 [2560/7000 (37%)]	Loss: 1.649505
+Train Epoch: 194 [3840/7000 (56%)]	Loss: 1.630895
+Train Epoch: 194 [5120/7000 (74%)]	Loss: 1.601773
+Train Epoch: 194 [6400/7000 (93%)]	Loss: 1.727054
+
+Train set: Average loss: 1.6086
+Validation set: Average loss: 1.8184, Accuracy: 625/2000 (31%)
+
+Epoch time: 7.2176 seconds
+Train Epoch: 195 [0/7000 (0%)]	Loss: 1.614713
+Train Epoch: 195 [1280/7000 (19%)]	Loss: 1.776631
+Train Epoch: 195 [2560/7000 (37%)]	Loss: 1.759230
+Train Epoch: 195 [3840/7000 (56%)]	Loss: 1.792275
+Train Epoch: 195 [5120/7000 (74%)]	Loss: 1.651418
+Train Epoch: 195 [6400/7000 (93%)]	Loss: 1.661050
+
+Train set: Average loss: 1.6303
+Validation set: Average loss: 1.8203, Accuracy: 632/2000 (32%)
+
+Epoch time: 7.1751 seconds
+Train Epoch: 196 [0/7000 (0%)]	Loss: 1.654915
+Train Epoch: 196 [1280/7000 (19%)]	Loss: 1.602542
+Train Epoch: 196 [2560/7000 (37%)]	Loss: 1.529730
+Train Epoch: 196 [3840/7000 (56%)]	Loss: 1.608473
+Train Epoch: 196 [5120/7000 (74%)]	Loss: 1.496574
+Train Epoch: 196 [6400/7000 (93%)]	Loss: 1.470320
+
+Train set: Average loss: 1.5691
+Validation set: Average loss: 1.8230, Accuracy: 646/2000 (32%)
+
+Epoch time: 7.2040 seconds
+Train Epoch: 197 [0/7000 (0%)]	Loss: 1.529807
+Train Epoch: 197 [1280/7000 (19%)]	Loss: 1.729292
+Train Epoch: 197 [2560/7000 (37%)]	Loss: 1.567188
+Train Epoch: 197 [3840/7000 (56%)]	Loss: 1.472649
+Train Epoch: 197 [5120/7000 (74%)]	Loss: 1.649975
+Train Epoch: 197 [6400/7000 (93%)]	Loss: 1.562176
+
+Train set: Average loss: 1.5782
+Validation set: Average loss: 1.8314, Accuracy: 633/2000 (32%)
+
+Epoch time: 7.1460 seconds
+Train Epoch: 198 [0/7000 (0%)]	Loss: 1.550210
+Train Epoch: 198 [1280/7000 (19%)]	Loss: 1.682703
+Train Epoch: 198 [2560/7000 (37%)]	Loss: 1.630521
+Train Epoch: 198 [3840/7000 (56%)]	Loss: 1.631051
+Train Epoch: 198 [5120/7000 (74%)]	Loss: 1.684397
+Train Epoch: 198 [6400/7000 (93%)]	Loss: 1.541888
+
+Train set: Average loss: 1.5852
+Validation set: Average loss: 1.8735, Accuracy: 615/2000 (31%)
+
+Epoch time: 7.1801 seconds
+Train Epoch: 199 [0/7000 (0%)]	Loss: 1.476874
+Train Epoch: 199 [1280/7000 (19%)]	Loss: 1.417054
+Train Epoch: 199 [2560/7000 (37%)]	Loss: 1.429476
+Train Epoch: 199 [3840/7000 (56%)]	Loss: 1.494454
+Train Epoch: 199 [5120/7000 (74%)]	Loss: 1.633424
+Train Epoch: 199 [6400/7000 (93%)]	Loss: 1.671003
+
+Train set: Average loss: 1.5703
+Validation set: Average loss: 1.8882, Accuracy: 610/2000 (30%)
+
+Epoch time: 7.1399 seconds
+Train Epoch: 200 [0/7000 (0%)]	Loss: 1.534619
+Train Epoch: 200 [1280/7000 (19%)]	Loss: 1.492360
+Train Epoch: 200 [2560/7000 (37%)]	Loss: 1.612710
+Train Epoch: 200 [3840/7000 (56%)]	Loss: 1.630128
+Train Epoch: 200 [5120/7000 (74%)]	Loss: 1.537813
+Train Epoch: 200 [6400/7000 (93%)]	Loss: 1.574231
+
+Train set: Average loss: 1.5817
+Validation set: Average loss: 1.8510, Accuracy: 635/2000 (32%)
+
+Epoch time: 7.1759 seconds
+Test set: Average loss: 1.8131, Accuracy: 331/1000 (33%)
+
+Liczba obrazów testowych: 1000
+Accuracy z confusion matrix: 33.10%
+Suma wierszy po normalizacji [%]: [100. 100. 100. 100. 100. 100. 100. 100. 100. 100. 100. 100. 100. 100.
+ 100. 100. 100.]
