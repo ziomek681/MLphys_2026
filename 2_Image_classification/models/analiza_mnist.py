@@ -1,4 +1,4 @@
-"""Wizualizacja CNN dla MNIST. Uruchom: python analiza_mnist.py --weights model.pth"""
+"""Wizualizacja CNN dla MNIST. Uruchom: python analiza_mnist.py --weights CNN_best.pth"""
 import argparse
 from pathlib import Path
 
@@ -75,44 +75,60 @@ def plot_filters(weights, folder):
     save(fig, folder / "maski_conv1.png")
 
 
-def responses(model, pixels, layer):
-    # Średnia przestrzenna PRZED ReLU w warstwie docelowej. Dzięki temu
-    # kanał ujemny w całym obrazie początkowym nadal daje gradient.
+OBJECTIVES = {
+    "centrum": "lokalna odpowiedź przed ReLU",
+    "srednia_relu": "średnia przestrzenna po ReLU",
+}
+
+
+def responses(model, pixels, layer, objective, warmup=False):
     first = model.conv1((pixels - MEAN) / STD)
     raw = first if layer == "conv1" else model.conv2(F.relu(first))
-    return raw.mean(dim=(2, 3))
+    if objective == "centrum":
+        return raw[:, :, raw.shape[2] // 2, raw.shape[3] // 2]
+
+    score = F.relu(raw).mean(dim=(2, 3))
+    if warmup:
+        # Przy całkowicie wygaszonym kanale podnoś najsilniejszą pozycję
+        # przed ReLU, aż pojawi się dodatnia odpowiedź.
+        return torch.where(score > 0, score, raw.amax(dim=(2, 3)))
+    return score
 
 
-def maximize(model, layer, steps, device):
+def maximize(model, layer, steps, device, objective):
     channels = getattr(model, layer).out_channels
     # Wspólny punkt startowy dla wszystkich kanałów w danej warstwie.
-    noise = torch.rand(1, 1, 28, 28, device=device)
+    # Bez paddingu wycinek pola recepcyjnego daje dokładnie jeden wynik.
+    # Współdzielone wagi dają taką samą odpowiedź jak w centrum pełnej mapy.
+    patch_size = 3 if layer == "conv1" else 7
+    size = patch_size if objective == "centrum" else 28
+    noise = torch.rand(1, 1, size, size, device=device)
     pixels = noise.repeat(channels, 1, 1, 1).requires_grad_()
-    start = responses(model, pixels, layer).detach()
+    start = responses(model, pixels, layer, objective).detach()
     best = pixels.detach().clone()
     best_score = start.diag().clone()
     optimizer = torch.optim.Adam([pixels], lr=.04)
     for _ in range(steps):
         optimizer.zero_grad()
-        (-responses(model, pixels, layer).diag().sum()).backward()
+        (-responses(model, pixels, layer, objective, warmup=True).diag().sum()).backward()
         optimizer.step()
         with torch.no_grad():
             pixels.clamp_(0, 1)
-            score = responses(model, pixels, layer).diag()
+            score = responses(model, pixels, layer, objective).diag()
             improved = score > best_score
             best[improved] = pixels[improved]
             best_score = torch.maximum(score, best_score)
-    final = responses(model, best, layer)
+    final = responses(model, best, layer, objective)
     return best[:, 0].cpu().numpy(), start.cpu().numpy(), final.cpu().numpy()
 
 
-def plot_optimization(layer, patterns, start, final, folder):
+def plot_optimization(layer, patterns, start, final, folder, objective):
     n = len(patterns)
     fig, axes = plt.subplots(n//5, 5, squeeze=False, figsize=(10, 2.3*(n//5)+.4),
                              layout="constrained")
     for i, ax in enumerate(axes.flat):
         tile(ax, patterns[i], f"Cel {i+1}", cmap="gray", vmin=0, vmax=1)
-    fig.suptitle(f"{layer}  •  obrazy maksymalizujące odpowiedź")
+    fig.suptitle(f"{layer}  •  {OBJECTIVES[objective]}  •  {patterns.shape[-1]} × {patterns.shape[-1]}")
     save(fig, folder / f"{layer}_obrazy.png")
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 6.5), layout="constrained")
@@ -128,7 +144,7 @@ def plot_optimization(layer, patterns, start, final, folder):
                yticklabels=range(1, n+1), xlabel="Mierzony kanał", ylabel="Kanał docelowy obrazu",
                title=title)
         fig.colorbar(im, ax=ax, orientation="horizontal", shrink=.75)
-    fig.suptitle(f"{layer}  •  średnia odpowiedź przestrzenna przed ReLU")
+    fig.suptitle(f"{layer}  •  {OBJECTIVES[objective]}")
     save(fig, folder / f"{layer}_macierze.png")
     for suffix, values in [("odpowiedz", final), ("przyrost", gain)]:
         np.savetxt(folder / f"{layer}_{suffix}.csv", values, delimiter=",", fmt="%.7g",
@@ -189,7 +205,11 @@ def main():
         folder.mkdir(parents=True, exist_ok=True)
     plot_filters(model.conv1.weight[:, 0].cpu().numpy(), filters)
     for layer in ("conv1", "conv2"):
-        plot_optimization(layer, *maximize(model, layer, args.steps, device), optimization)
+        for objective in OBJECTIVES:
+            folder = optimization / objective
+            folder.mkdir(exist_ok=True)
+            results = maximize(model, layer, args.steps, device, objective)
+            plot_optimization(layer, *results, folder, objective)
     dataset = MNIST(root=str(args.data), train=False, download=True)
     plot_examples(model, dataset, device, examples)
     print(f"Zapisano wyniki w {args.out.resolve()}")
